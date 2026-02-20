@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Jatin Bharmota | Data Analyst, Data Scientist & Business Analyst. Converting complex datasets into actionable insights. Expert in predictive modeling, MIS, and enterprise analytics.">
+    <meta name="keywords"
+        content="Jatin Bharmota, Data Analyst, Data Scientist, Business Analyst, Marketing Analyst, System Analyst, MIS, Python, SQL, Machine Learning, Analytics">
+    <meta name="author" content="Jatin Bharmota">
+    <link rel="canonical" href="https://jatinbharmota.netlify.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jatinbharmota.netlify.app/">
+    <meta property="og:title" content="Jatin Bharmota | Data Analyst & Data Scientist">
+    <meta property="og:description"
+        content="Detail-oriented Data Analyst / Data Scientist. Predictive modeling, data-driven decision support, and performance optimization.">
+    <meta property="og:image" content="https://jatinbharmota.netlify.app/Assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jatinbharmota.netlify.app/">
+    <meta property="twitter:title" content="Jatin Bharmota | Data Analyst & Data Scientist">
+    <meta property="twitter:description"
+        content="Detail-oriented Data Analyst / Data Scientist. Predictive modeling and data-driven decision support.">
+    <meta property="twitter:image" content="https://jatinbharmota.netlify.app/Assets/images/og-image.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TLNG322R');</script>
+    <!-- End Google Tag Manager -->
+    <title>Jatin Bharmota | Data Analyst · Data Scientist · Business Analyst</title>
+
+    <!-- Theme & Performance -->
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Space+Grotesk:wght@800&display=swap"
+        as="style">
+
+    <!-- JSON-LD Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jatin Bharmota",
+      "url": "https://jatinbharmota.netlify.app/",
+      "jobTitle": "Data Analyst, Data Scientist, Business Analyst",
+      "email": "bharmotajatin@gmail.com",
+      "telephone": "+91-9711855665",
+      "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "postalCode": "110019", "addressCountry": "IN" },
+      "knowsAbout": ["Data Analysis", "Business Analysis", "Python", "SQL", "Machine Learning", "MIS", "Excel", "AWS", "Enterprise Architecture"],
+      "sameAs": ["https://www.linkedin.com/in/jatin-b-3518b9206"],
+      "description": "Detail-oriented Data Analyst / Data Scientist with strong analytical expertise. Converting complex datasets into actionable business insights. Experienced in predictive modeling and data-driven decision support."
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link type="logo" rel="icon" href="Assets/images/title_icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Chart.js for skills dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-black': '#0a0a0a',
+                        'neo-blue': '#2563eb',
+                        'neo-emerald': '#059669',
+                        'emerald-light': '#10b981',
+                        'blue-light': '#3b82f6',
+                        'neo-white': '#f8fafc',
+                    },
+                    fontFamily: {
+                        'display': ['"Space Grotesk"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px #000',
+                        'hard-sm': '2px 2px 0px 0px #000',
+                        'hard-lg': '8px 8px 0px 0px #000',
+                        'hard-xl': '12px 12px 0px 0px #000',
+                        'glow-emerald': '0 0 20px rgba(5, 150, 105, 0.4)',
+                        'glow-blue': '0 0 20px rgba(37, 99, 235, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --neo-black: #0a0a0a;
+            --neo-blue: #2563eb;
+            --neo-emerald: #059669;
+            --emerald-glow: rgba(5, 150, 105, 0.35);
+            --blue-glow: rgba(37, 99, 235, 0.35);
+        }
+
+        /* Base - Black/Blue/Emerald theme */
+        body {
+            cursor: none;
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(#059669 1px, transparent 1px),
+                linear-gradient(to right, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px, 80px 80px, 80px 80px;
+        }
+
+        #cursor {
+            pointer-events: none;
+            position: fixed;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+        }
+
+        .marquee-container { overflow: hidden; }
+        .marquee-content {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+        .marquee-container:hover .marquee-content { animation-play-state: paused; }
+        .marquee-content-reverse {
+            display: inline-block;
+            animation: scroll-reverse 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Reveal with stagger support */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-1 { transition-delay: 0.05s; }
+        .reveal-2 { transition-delay: 0.1s; }
+        .reveal-3 { transition-delay: 0.15s; }
+        .reveal-4 { transition-delay: 0.2s; }
+        .reveal-5 { transition-delay: 0.25s; }
+        .reveal-6 { transition-delay: 0.3s; }
+
+        /* Float animation for hero shapes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float-slow { animation: float-slow 5s ease-in-out infinite; }
+
+        /* Shine / shimmer on hover */
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .hover-shine {
+            background: linear-gradient(90deg, transparent, rgba(5, 150, 105, 0.15), transparent);
+            background-size: 200% 100%;
+            background-position: -200% center;
+            transition: background-position 0.6s ease;
+        }
+        .hover-shine:hover { background-position: 200% center; }
+
+        /* Scale-in for cards */
+        @keyframes scale-in {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .reveal.active.scale-in { animation: scale-in 0.5s ease forwards; }
+
+        /* Glitch - emerald accent */
+        .glitch-hover:hover {
+            animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: var(--neo-emerald);
+        }
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Gradient text */
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Cursor-oriented: hover lift and glow */
+        .cursor-hover-card {
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .cursor-hover-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15), 0 0 40px rgba(37, 99, 235, 0.1);
+        }
+        .magnetic {
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* —— Skills Dashboard: rich colors & panels —— */
+        :root {
+            --skill-data: #059669;
+            --skill-lang: #2563eb;
+            --skill-front: #7c3aed;
+            --skill-back: #d97706;
+            --skill-tools: #e11d48;
+            --skill-cloud: #0891b2;
+        }
+        .skills-dashboard { display: grid; gap: 1.5rem; }
+        @media (min-width: 768px) {
+            .skills-dashboard { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .skills-dashboard { grid-template-columns: repeat(3, 1fr); }
+        }
+        .skill-panel {
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.12);
+            background: rgba(10,10,10,0.85);
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+        }
+        .skill-panel:hover {
+            border-color: rgba(255,255,255,0.25);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            transform: translateY(-2px);
+        }
+        .skill-panel[data-category="data"] { border-left: 4px solid var(--skill-data); }
+        .skill-panel[data-category="languages"] { border-left: 4px solid var(--skill-lang); }
+        .skill-panel[data-category="frontend"] { border-left: 4px solid var(--skill-front); }
+        .skill-panel[data-category="backend"] { border-left: 4px solid var(--skill-back); }
+        .skill-panel[data-category="tools"] { border-left: 4px solid var(--skill-tools); }
+        .skill-panel[data-category="cloud"] { border-left: 4px solid var(--skill-cloud); }
+        .skill-panel-header {
+            padding: 0.75rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .skill-panel[data-category="data"] .skill-panel-header { background: linear-gradient(90deg, rgba(5,150,105,0.2), transparent); color: #10b981; }
+        .skill-panel[data-category="languages"] .skill-panel-header { background: linear-gradient(90deg, rgba(37,99,235,0.2), transparent); color: #60a5fa; }
+        .skill-panel[data-category="frontend"] .skill-panel-header { background: linear-gradient(90deg, rgba(124,58,237,0.2), transparent); color: #a78bfa; }
+        .skill-panel[data-category="backend"] .skill-panel-header { background: linear-gradient(90deg, rgba(217,119,6,0.2), transparent); color: #fbbf24; }
+        .skill-panel[data-category="tools"] .skill-panel-header { background: linear-gradient(90deg, rgba(225,29,72,0.2), transparent); color: #fb7185; }
+        .skill-panel[data-category="cloud"] .skill-panel-header { background: linear-gradient(90deg, rgba(8,145,178,0.2), transparent); color: #22d3ee; }
+        .skill-panel-body { padding: 0.75rem 1rem 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+        .skill-chip:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .skill-chip[data-cat="data"] { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.5); }
+        .skill-chip[data-cat="languages"] { background: rgba(37,99,235,0.25); color: #93c5fd; border: 1px solid rgba(37,99,235,0.5); }
+        .skill-chip[data-cat="frontend"] { background: rgba(124,58,237,0.25); color: #c4b5fd; border: 1px solid rgba(124,58,237,0.5); }
+        .skill-chip[data-cat="backend"] { background: rgba(217,119,6,0.25); color: #fcd34d; border: 1px solid rgba(217,119,6,0.5); }
+        .skill-chip[data-cat="tools"] { background: rgba(225,29,72,0.25); color: #fda4af; border: 1px solid rgba(225,29,72,0.5); }
+        .skill-chip[data-cat="cloud"] { background: rgba(8,145,178,0.25); color: #67e8f9; border: 1px solid rgba(8,145,178,0.5); }
+        .skill-level { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.15); overflow: hidden; min-width: 48px; }
+        .skill-level-fill { height: 100%; border-radius: 2px; transition: width 0.4s ease; }
+        .skills-stats { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+        .skills-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.6); }
+        .skills-legend span { display: inline-flex; align-items: center; gap: 0.25rem; }
+        .skills-legend .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+        /* Skills charts row */
+        .skills-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        @media (max-width: 768px) { .skills-charts { grid-template-columns: 1fr; } }
+        .chart-card {
+            background: rgba(10,10,10,0.9);
+            border: 2px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            min-height: 260px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chart-card:hover { border-color: rgba(5,150,105,0.5); box-shadow: 0 8px 32px rgba(5,150,105,0.15); }
+        .chart-card h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; }
+        .chart-card canvas { max-height: 220px; width: 100% !important; }
+
+        /* Three.js canvas behind content */
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .hero-section { position: relative; z-index: 1; }
+
+        /* —— Page Loader: Black Hole Tunnel —— */
+        body.loading { overflow: hidden; }
+        body.loading #main-content { opacity: 0; pointer-events: none; }
+        body.page-loaded #main-content { opacity: 1; pointer-events: auto; transition: opacity 0.8s ease; }
+        body.page-loaded .page-loader { opacity: 0; pointer-events: none; transition: opacity 0.6s ease; }
+        body.page-loaded .page-loader .loader-tunnel { animation: none; }
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease;
+        }
+        .loader-tunnel {
+            position: relative;
+            width: 120vmax;
+            height: 120vmax;
+            animation: tunnel-pull 2.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+        .loader-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px solid;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ring-shrink 2.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+        .loader-ring:nth-child(1) { width: 100%; height: 100%; border-color: rgba(5, 150, 105, 0.9); animation-delay: 0s; }
+        .loader-ring:nth-child(2) { width: 85%; height: 85%; border-color: rgba(37, 99, 235, 0.8); animation-delay: 0.05s; }
+        .loader-ring:nth-child(3) { width: 70%; height: 70%; border-color: rgba(5, 150, 105, 0.7); animation-delay: 0.1s; }
+        .loader-ring:nth-child(4) { width: 55%; height: 55%; border-color: rgba(37, 99, 235, 0.6); animation-delay: 0.15s; }
+        .loader-ring:nth-child(5) { width: 40%; height: 40%; border-color: rgba(5, 150, 105, 0.5); animation-delay: 0.2s; }
+        .loader-ring:nth-child(6) { width: 25%; height: 25%; border-color: rgba(37, 99, 235, 0.4); animation-delay: 0.25s; }
+        .loader-ring:nth-child(7) { width: 12%; height: 12%; border-color: rgba(5, 150, 105, 0.3); animation-delay: 0.3s; }
+        .loader-ring:nth-child(8) { width: 4%; height: 4%; border-color: rgba(37, 99, 235, 0.2); animation-delay: 0.35s; }
+        @keyframes tunnel-pull {
+            0% { transform: scale(0.3); opacity: 1; }
+            60% { transform: scale(1.2); opacity: 1; }
+            85% { transform: scale(1.5); opacity: 0.8; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+        @keyframes ring-shrink {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            70% { transform: translate(-50%, -50%) scale(1) rotate(180deg); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+        }
+        .loader-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            background: #0a0a0a;
+            border-radius: 50%;
+            box-shadow: 0 0 0 40px #0a0a0a, 0 0 60px 20px rgba(5, 150, 105, 0.3);
+            z-index: 2;
+        }
+        .loader-text {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
+            font-weight: 700;
+            color: rgba(5, 150, 105, 0.9);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            animation: loader-text-pulse 1s ease-in-out infinite;
+        }
+        .loader-text span { opacity: 0; animation: loader-dots 1.5s steps(4, end) infinite; }
+        @keyframes loader-text-pulse { 0%, 100% { opacity: 0.9; } 50% { opacity: 0.5; } }
+        @keyframes loader-dots { 0%, 20% { opacity: 0; } 40%, 100% { opacity: 1; } }
+    </style>
+</head>
+
+<body class="text-neo-white font-display antialiased selection:bg-neo-emerald selection:text-neo-black loading">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Page Loader: Black Hole Tunnel (Data Analyst theme) -->
+    <div class="page-loader" id="page-loader" aria-hidden="false">
+        <div class="loader-tunnel">
+            <div class="loader-center"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+        </div>
+        <p class="loader-text">Loading data<span>...</span></p>
+    </div>
+
+    <div id="main-content">
+    <!-- Three.js 3D Background -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Custom Cursor (single dot, hover grow + emerald) -->
+    <div id="cursor" class="w-6 h-6 bg-white rounded-full border-2 border-black hidden lg:block"></div>
+
+    <div class="fixed top-0 left-0 h-1 bg-neo-emerald z-[60] border-b border-neo-blue/50" id="progressBar" style="width: 0%"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-4 py-4 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
+            <a href="#"
+                class="magnetic bg-neo-black border-2 border-neo-emerald px-4 py-1 text-2xl font-black shadow-hard hover:bg-neo-emerald hover:text-neo-black transition-all duration-300 hover:shadow-glow-emerald cursor-hover">
+                JATIN.exe
+            </a>
+
+            <div class="hidden md:flex gap-4 bg-neo-black/90 border-2 border-neo-blue p-2 shadow-hard">
+                <a href="#about"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/ABOUT</a>
+                <a href="#skills"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/SKILLS</a>
+                <a href="#experience"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/EXPERIENCE</a>
+                <a href="#education"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/EDUCATION</a>
+                <a href="#certifications"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/CERTIFICATIONS</a>
+                <a href="#projects"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm hover:bg-neo-blue hover:text-white transition-colors duration-300 cursor-hover">/WORK</a>
+                <a href="#contact"
+                    class="magnetic px-3 py-1 font-mono font-bold text-sm bg-neo-emerald text-neo-black border border-neo-emerald hover:bg-emerald-light hover:scale-105 transition-all duration-300 cursor-hover">HIRE ME</a>
+            </div>
+        </div>
+    </nav>
+
+    <section
+        class="hero-section min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden border-b-4 border-neo-emerald/50">
+        <div
+            class="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-neo-emerald shadow-hard hidden lg:block rotate-12 animate-float opacity-90">
+        </div>
+        <div
+            class="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-emerald rounded-full border-4 border-neo-blue shadow-hard hidden lg:block animate-float-slow opacity-90">
+        </div>
+        <div class="absolute top-20 right-20 text-9xl font-black select-none pointer-events-none text-neo-blue/10">CODE</div>
+
+        <div class="relative z-10 text-center max-w-5xl">
+            <div
+                class="inline-block bg-neo-black border-2 border-neo-emerald px-4 py-1 mb-6 shadow-hard rotate-[-2deg] reveal reveal-1">
+                <span class="font-mono font-bold text-neo-emerald bg-neo-emerald/20 px-2 mr-2">●</span>
+                <span class="font-mono font-bold text-neo-white">SYSTEM STATUS: ONLINE</span>
+            </div>
+
+            <h1
+                class="text-[11vw] md:text-[8vw] leading-[0.9] font-black uppercase tracking-tighter mb-6 reveal reveal-2">
+                DATA ANALYST<br>
+                <span class="text-gradient-emerald" style="-webkit-text-stroke: 0;">DATA SCIENTIST</span>
+            </h1>
+
+            <p
+                class="font-mono text-base md:text-xl max-w-2xl mx-auto mb-10 bg-neo-black border-2 border-neo-blue p-4 shadow-hard reveal reveal-3 rotate-1 text-neo-white">
+                Business & System Analyst · Marketing & Research Analyst · IT Project Lead<br>
+                <b class="text-neo-emerald">Python • SQL • Excel • ML • MIS • AWS</b>
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 reveal reveal-4">
+                <a href="#projects"
+                    class="magnetic bg-neo-emerald text-neo-black border-2 border-neo-emerald px-10 py-5 text-xl font-bold shadow-hard hover:bg-emerald-light hover:scale-105 hover:shadow-glow-emerald transition-all duration-300 cursor-hover">
+                    VIEW DATABASE
+                </a>
+                <!-- Resume: put your PDF in Assets/Resume/RESUME_2026.pdf (see Assets/Resume/README.md) -->
+                <a href="/Assets/Resume/RESUME_2026.pdf" download="RESUME_2026.pdf"
+                    class="magnetic bg-neo-black text-neo-white border-2 border-neo-blue px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-blue hover:text-white hover:scale-105 transition-all duration-300 cursor-hover flex items-center justify-center gap-2">
+                    <i class="ri-download-line"></i> DOWNLOAD CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="border-b-4 border-neo-emerald/50 bg-neo-blue py-3 relative z-20">
+        <div class="marquee-container font-mono font-bold text-2xl text-neo-white">
+            <div class="marquee-content">
+                /// DATA ANALYST /// DATA SCIENTIST /// BUSINESS ANALYST /// MIS & REPORTING /// OPEN FOR OPPORTUNITIES ///
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 px-4 max-w-7xl mx-auto border-x-4 border-neo-emerald/50 bg-neo-black/80 my-12 shadow-hard-lg hover-shine cursor-hover-card">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4 reveal reveal-1">
+                <div class="aspect-square bg-neo-blue/20 border-4 border-neo-blue relative shadow-hard overflow-hidden group">
+                    <img src="Assets/images/img.jpg" alt="Jatin Bharmota"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105">
+                    <span
+                        class="absolute top-2 left-2 bg-neo-emerald text-neo-black px-2 font-mono text-xs border border-neo-emerald z-10">JATIN.JPG</span>
+                </div>
+            </div>
+            <div class="md:col-span-8 flex flex-col justify-center reveal reveal-2">
+                <h2 class="text-6xl font-black uppercase mb-6 text-neo-white">Who am I?</h2>
+                <p class="font-mono text-xl leading-relaxed mb-6 text-gray-300">
+                    I'm <span class="bg-neo-emerald/30 text-neo-emerald px-1 border border-neo-emerald">Jatin Bharmota</span>. Detail-oriented Data Analyst / Data Scientist with strong analytical expertise and a proven ability to convert complex datasets into actionable business insights. Experienced in predictive modeling, data-driven decision support, and performance optimization to deliver measurable outcomes.
+                </p>
+                <p class="font-mono text-lg mb-8 text-gray-400 border-l-4 border-neo-blue pl-4">
+                    > Quick learner with a proactive, solution-focused mindset.<br>
+                    > Committed to continuous improvement and analytical excellence.<br>
+                    > Enterprise systems, MIS operations, and cross-functional leadership.
+                </p>
+
+                <div class="flex gap-4 flex-wrap">
+                    <div class="bg-neo-black text-neo-white px-4 py-2 font-mono text-sm border-2 border-neo-blue">
+                        📍 NEW DELHI, INDIA 110019
+                    </div>
+                    <div class="bg-neo-emerald text-neo-black px-4 py-2 font-mono text-sm border-2 border-neo-emerald">
+                        🟢 OPEN FOR OPPORTUNITIES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-neo-black text-neo-white border-y-4 border-neo-emerald/50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: linear-gradient(rgba(5,150,105,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.2) 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-4 mb-8 border-b-4 border-neo-emerald pb-4 reveal">
+                <h2 class="text-5xl md:text-7xl font-black uppercase text-white tracking-tighter">
+                    Skills<span class="text-gradient-emerald">_Dashboard</span>
+                </h2>
+                <p class="font-mono text-gray-400 text-sm max-w-md">Data, dev &amp; tools in one place. Hover chips for detail.</p>
+            </div>
+
+            <!-- Stats + legend -->
+            <div class="skills-stats mb-8 reveal font-mono text-sm">
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="text-white font-bold"><span class="text-neo-emerald">24+</span> skills</span>
+                    <span class="text-gray-400">across</span>
+                    <span class="text-white font-bold"><span class="text-neo-blue">6</span> categories</span>
+                    <span class="text-gray-500">·</span>
+                    <span class="text-gray-400">Domains: Analytics · Aviation · EdTech · Cloud</span>
+                </div>
+                <div class="skills-legend mt-2">
+                    <span><span class="dot bg-emerald-400"></span> Data &amp; analytics</span>
+                    <span><span class="dot bg-blue-400"></span> Languages</span>
+                    <span><span class="dot bg-violet-400"></span> Frontend</span>
+                    <span><span class="dot bg-amber-400"></span> Backend</span>
+                    <span><span class="dot bg-rose-400"></span> Tools</span>
+                    <span><span class="dot bg-cyan-400"></span> Cloud &amp; infra</span>
+                </div>
+            </div>
+
+            <!-- Charts row -->
+            <div class="skills-charts reveal">
+                <div class="chart-card">
+                    <h3>Skills by category</h3>
+                    <canvas id="chart-doughnut" aria-label="Skills distribution by category"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Focus strength (relative)</h3>
+                    <canvas id="chart-bars" aria-label="Focus strength by category"></canvas>
+                </div>
+            </div>
+
+            <div class="skills-dashboard">
+                <!-- Data & Analytics -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="data" title="Data analysis, BI, reporting, ML">
+                    <div class="skill-panel-header"><i class="ri-database-2-line"></i> Data &amp; Analytics</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Structured queries, reporting, ETL">SQL</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Analysis, scripting, automation">Python</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Spreadsheets, pivot tables, dashboards">Excel</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Predictive models, stats">Machine Learning</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Management info systems">MIS</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Data-driven insights">Data Analysis</span>
+                        <span class="skill-chip cursor-hover" data-cat="data" title="Requirements, process design">Business Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="languages" title="Programming languages">
+                    <div class="skill-panel-header"><i class="ri-code-s-slash-line"></i> Languages</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="languages">Python</span>
+                        <span class="skill-chip cursor-hover" data-cat="languages">Java</span>
+                        <span class="skill-chip cursor-hover" data-cat="languages">JavaScript</span>
+                        <span class="skill-chip cursor-hover" data-cat="languages">PHP</span>
+                        <span class="skill-chip cursor-hover" data-cat="languages">C++</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="frontend" title="UI, styling, 3D">
+                    <div class="skill-panel-header"><i class="ri-window-line"></i> Frontend</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="frontend">React</span>
+                        <span class="skill-chip cursor-hover" data-cat="frontend">Next.js</span>
+                        <span class="skill-chip cursor-hover" data-cat="frontend">HTML5</span>
+                        <span class="skill-chip cursor-hover" data-cat="frontend">Tailwind CSS</span>
+                        <span class="skill-chip cursor-hover" data-cat="frontend">Three.js</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="backend" title="Servers, APIs, frameworks">
+                    <div class="skill-panel-header"><i class="ri-server-line"></i> Backend</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="backend">Node.js</span>
+                        <span class="skill-chip cursor-hover" data-cat="backend">Django</span>
+                        <span class="skill-chip cursor-hover" data-cat="backend">Laravel</span>
+                        <span class="skill-chip cursor-hover" data-cat="backend">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="tools" title="Version control, databases, APIs">
+                    <div class="skill-panel-header"><i class="ri-tools-line"></i> Tools &amp; Data</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="tools">Git</span>
+                        <span class="skill-chip cursor-hover" data-cat="tools">GitHub</span>
+                        <span class="skill-chip cursor-hover" data-cat="tools">MySQL</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & Infra -->
+                <div class="skill-panel cursor-hover reveal cursor-hover" data-category="cloud" title="Cloud, scale, security">
+                    <div class="skill-panel-header"><i class="ri-cloud-line"></i> Cloud &amp; Infra</div>
+                    <div class="skill-panel-body">
+                        <span class="skill-chip cursor-hover" data-cat="cloud" title="Compute, Bedrock, scalability">AWS</span>
+                        <span class="skill-chip cursor-hover" data-cat="cloud" title="Enterprise systems design">Enterprise Architecture</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-6 font-mono text-xs text-gray-500 reveal flex flex-wrap justify-between gap-2">
+                <span>Proficiency: daily use → expert across analytics &amp; full-stack</span>
+                <span>Hover a chip for short description where available</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-4 max-w-7xl mx-auto bg-neo-black/40">
+        <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center text-neo-white reveal">
+            Experience<span class="text-gradient-emerald">_Log</span>
+        </h2>
+
+        <div class="relative border-l-4 border-neo-emerald ml-4 md:ml-10 space-y-12">
+            <div class="reveal relative pl-8 md:pl-16">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-emerald border-4 border-neo-blue"></div>
+                <div class="bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:shadow-glow-blue hover:border-neo-emerald transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-neo-blue/40 pb-4 mb-4">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase">Business & System Analyst</h3>
+                        <span class="font-mono font-bold bg-neo-blue text-white px-2 py-1">01/2026 – Current</span>
+                    </div>
+                    <p class="font-mono text-xl mb-2 text-neo-emerald font-bold">@ Bird Group – Bird Flight Services India Pvt Ltd, Vasant Vihar</p>
+                    <ul class="list-disc list-inside font-mono text-gray-300 space-y-1 text-sm md:text-base">
+                        <li>Head Business & Systems Analysis, driving enterprise architecture and delivery of a mission-critical aviation platform across 18 stations.</li>
+                        <li>Own end-to-end lifecycle governance, ensuring regulatory compliance and operational alignment.</li>
+                        <li>Lead cross-functional teams with defined roadmaps, controls, and performance benchmarks.</li>
+                        <li>Enforce secure, scalable, high-availability architecture and data integrity standards.</li>
+                        <li>Translate business strategy into scalable, high-impact technology solutions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reveal relative pl-8 md:pl-16">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-blue border-4 border-neo-emerald"></div>
+                <div class="bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:shadow-glow-blue hover:border-neo-emerald transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-neo-blue/40 pb-4 mb-4">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase">Executive Marketing & Business Development</h3>
+                        <span class="font-mono font-bold bg-neo-blue text-white px-2 py-1">12/2024 – Current</span>
+                    </div>
+                    <p class="font-mono text-xl mb-2 text-neo-blue font-bold">@ Bird Group – Bird Worldwide Flight Services, Vasant Vihar</p>
+                    <ul class="list-disc list-inside font-mono text-gray-300 space-y-1 text-sm md:text-base">
+                        <li>Airline Agreements & Partnerships – Sole accountable owner for airline ground handling agreements across 18 major Indian airports; delegated signing authority; lead commercial negotiations with domestic and international carriers.</li>
+                        <li>MIS Operations & Data Analysis – Spearhead MIS operations and large-scale data analytics, optimizing data ecosystems for strategic market insights and data-led business growth.</li>
+                        <li>Ground Handling Support – Analyze airline and flight record data to identify growth opportunities and optimize operations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reveal relative pl-8 md:pl-16">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-emerald border-4 border-neo-blue"></div>
+                <div class="bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:shadow-glow-blue hover:border-neo-emerald transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-neo-blue/40 pb-4 mb-4">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase">Process Associate</h3>
+                        <span class="font-mono font-bold bg-neo-blue text-white px-2 py-1">12/2023 – 07/2024</span>
+                    </div>
+                    <p class="font-mono text-xl mb-2 text-neo-emerald font-bold">@ Expedia Group – IGT Solutions</p>
+                    <ul class="list-disc list-inside font-mono text-gray-300 space-y-1 text-sm md:text-base">
+                        <li>Deployed applications into various environments including cloud-based solutions (Amazon Web Services).</li>
+                        <li>Proven ability in running operational tasks, optimizing workflow, and ensuring quality compliance within IT and consulting setup.</li>
+                        <li>Leverage analytical tools and methodologies in support of project management and business outcomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reveal relative pl-8 md:pl-16">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-blue border-4 border-neo-emerald"></div>
+                <div class="bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:shadow-glow-blue hover:border-neo-emerald transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-neo-blue/40 pb-4 mb-4">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase">IT Consultant & Faculty</h3>
+                        <span class="font-mono font-bold bg-neo-blue text-white px-2 py-1">05/2020 – 07/2023</span>
+                    </div>
+                    <p class="font-mono text-xl mb-2 text-neo-blue font-bold">@ Educonclave</p>
+                    <ul class="list-disc list-inside font-mono text-gray-300 space-y-1 text-sm md:text-base">
+                        <li>IT Infrastructure Management – Oversaw and optimized IT systems, hardware, software, and networking.</li>
+                        <li>EdTech Solutions – Advised on and deployed LMS, digital classrooms to enhance teaching and student engagement.</li>
+                        <li>Data Analysis & Reporting – Collected and analyzed student performance data for actionable insights.</li>
+                        <li>Programming Instruction – Taught Python, Java, C++, and SQL to student batches.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-24 px-4 max-w-7xl mx-auto bg-neo-black/40 border-t-4 border-neo-emerald/50">
+        <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center text-neo-white reveal">
+            Education<span class="text-gradient-emerald">_</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="reveal cursor-hover-card bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald transition-all duration-300">
+                <span class="font-mono text-neo-emerald text-sm font-bold">02/2026</span>
+                <h3 class="text-2xl font-black uppercase mt-2 text-neo-white">MCA (AI & ML)</h3>
+                <p class="font-mono text-neo-blue font-bold mt-1">Manav Rachna International Institute of Research and Studies, New Delhi</p>
+                <p class="font-mono text-gray-400 mt-2 text-sm">Information Technology. Skilled in Java, Python, SQL. Strong in software development, database management, and IT solution design.</p>
+            </div>
+            <div class="reveal cursor-hover-card bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald transition-all duration-300">
+                <span class="font-mono text-neo-emerald text-sm font-bold">01/2023</span>
+                <h3 class="text-2xl font-black uppercase mt-2 text-neo-white">BCA</h3>
+                <p class="font-mono text-neo-blue font-bold mt-1">Guru Gobind Singh Indraprastha University, Dwarka Sector-16</p>
+                <p class="font-mono text-gray-400 mt-2 text-sm">Computer Application. Proficient in SQL Server, MySQL, Python, Java, C++, JavaScript, PHP, MATLAB. <span class="text-neo-emerald">GPA: 8.5 CGPA</span></p>
+            </div>
+            <div class="reveal cursor-hover-card bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald transition-all duration-300">
+                <span class="font-mono text-neo-emerald text-sm font-bold">01/2020</span>
+                <h3 class="text-2xl font-black uppercase mt-2 text-neo-white">CBSE Class XII</h3>
+                <p class="font-mono text-neo-blue font-bold mt-1">St. George's School, Alaknanda, New Delhi</p>
+                <p class="font-mono text-gray-400 mt-2 text-sm">Commerce with IP. <span class="text-neo-emerald">12th Percentage: 85.2%</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACCOMPLISHMENTS (LinkedIn: jatin-b-3518b9206) -->
+    <section id="certifications" class="py-24 px-4 max-w-7xl mx-auto border-y-4 border-neo-blue/50">
+        <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center text-neo-white reveal">
+            Certifications<span class="text-gradient-emerald">_</span> & Accomplishments
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="reveal cursor-hover-card bg-neo-black/80 border-4 border-neo-emerald p-6 shadow-hard hover:shadow-glow-emerald hover:border-emerald-light transition-all duration-300">
+                <h3 class="text-neo-emerald font-mono font-bold mb-4 border-b border-neo-emerald/50 pb-2">CERTIFICATIONS</h3>
+                <ul class="font-mono text-gray-300 space-y-2 text-sm">
+                    <li><span class="text-neo-white font-bold">Advanced Excel & Data Analysis</span> – Coding Ninjas</li>
+                    <li><span class="text-neo-white font-bold">Data Analysis</span> – IIM Calcutta (Excel, decision-making, analytical skills)</li>
+                    <li><span class="text-neo-white font-bold">AWS Compute Services & Amazon Bedrock</span> – Generative AI apps, scalability, security; AWS chatbot integration</li>
+                    <li><span class="text-neo-white font-bold">Cryptocurrency Trading</span> – Financial markets and digital currencies</li>
+                </ul>
+                <a href="https://www.linkedin.com/in/jatin-b-3518b9206/details/certifications/" target="_blank" rel="noopener" class="magnetic inline-flex items-center gap-2 mt-4 text-neo-emerald font-mono font-bold text-sm hover:text-emerald-light transition-colors cursor-hover">
+                    <i class="ri-linkedin-fill"></i> View all certifications on LinkedIn
+                </a>
+            </div>
+            <div class="reveal cursor-hover-card bg-neo-black/80 border-4 border-neo-blue p-6 shadow-hard hover:shadow-glow-blue hover:border-blue-light transition-all duration-300">
+                <h3 class="text-neo-blue font-mono font-bold mb-4 border-b border-neo-blue/50 pb-2">ACCOMPLISHMENTS</h3>
+                <ul class="font-mono text-gray-300 space-y-2 text-sm">
+                    <li>Letter of Appreciation from My Captain – Stock Market and Finance</li>
+                    <li>Key competencies: Clear communication, working efficiently with little supervision, bringing ideas to life, organizational awareness</li>
+                </ul>
+                <a href="https://www.linkedin.com/in/jatin-b-3518b9206/" target="_blank" rel="noopener" class="magnetic inline-flex items-center gap-2 mt-4 text-neo-blue font-mono font-bold text-sm hover:text-blue-light transition-colors cursor-hover">
+                    <i class="ri-linkedin-fill"></i> Full profile on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-neo-black border-t-4 border-neo-emerald px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-9xl font-black mb-16 uppercase tracking-tighter reveal text-gradient-emerald">
+                Focus Areas & Deliverables
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <article class="reveal group bg-neo-black/90 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald hover:shadow-glow-emerald transition-all duration-300 cursor-hover-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-neo-emerald/20 border-2 border-neo-emerald flex items-center justify-center"><i class="ri-plane-line text-2xl text-neo-emerald"></i></div>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase group-hover:text-neo-emerald transition-colors glitch-hover">Enterprise Aviation Platform</h3>
+                    </div>
+                    <p class="font-mono text-gray-300 mb-4">Mission-critical aviation platform across 18 stations. End-to-end lifecycle governance, regulatory compliance, scalable architecture, and data integrity. Cross-functional leadership with defined roadmaps and performance benchmarks.</p>
+                    <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                        <span class="bg-neo-blue/80 text-white px-2 py-1">Enterprise Architecture</span>
+                        <span class="bg-neo-blue/80 text-white px-2 py-1">Systems Analysis</span>
+                        <span class="bg-neo-blue/80 text-white px-2 py-1">Governance</span>
+                    </div>
+                </article>
+
+                <article class="reveal group bg-neo-black/90 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald hover:shadow-glow-emerald transition-all duration-300 cursor-hover-card mt-0 md:mt-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-neo-blue/20 border-2 border-neo-blue flex items-center justify-center"><i class="ri-dashboard-3-line text-2xl text-neo-blue"></i></div>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase group-hover:text-neo-blue transition-colors glitch-hover">MIS & Data Analytics</h3>
+                    </div>
+                    <p class="font-mono text-gray-300 mb-4">Large-scale MIS operations and data analytics. Optimizing complex data ecosystems for strategic market insights, reduced analytical complexity, and data-led business growth. Dashboard development and reporting.</p>
+                    <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">MIS</span>
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">Data Analysis</span>
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">Dashboards</span>
+                    </div>
+                </article>
+
+                <article class="reveal group bg-neo-black/90 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald hover:shadow-glow-emerald transition-all duration-300 cursor-hover-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-neo-emerald/20 border-2 border-neo-emerald flex items-center justify-center"><i class="ri-file-list-3-line text-2xl text-neo-emerald"></i></div>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase group-hover:text-neo-emerald transition-colors glitch-hover">Airline Agreements & Business Development</h3>
+                    </div>
+                    <p class="font-mono text-gray-300 mb-4">Sole accountable owner for airline ground handling agreements across 18 major Indian airports. Commercial negotiations, strategic stakeholder relationships, contractual alignment. Business growth through data insights and expansion planning.</p>
+                    <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                        <span class="bg-neo-blue/80 text-white px-2 py-1">Business Development</span>
+                        <span class="bg-neo-blue/80 text-white px-2 py-1">Partnerships</span>
+                    </div>
+                </article>
+
+                <article class="reveal group bg-neo-black/90 border-4 border-neo-blue p-6 shadow-hard hover:border-neo-emerald hover:shadow-glow-emerald transition-all duration-300 cursor-hover-card mt-0 md:mt-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-neo-blue/20 border-2 border-neo-blue flex items-center justify-center"><i class="ri-code-s-slash-line text-2xl text-neo-blue"></i></div>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase group-hover:text-neo-blue transition-colors glitch-hover">EdTech & IT Consulting</h3>
+                    </div>
+                    <p class="font-mono text-gray-300 mb-4">IT infrastructure management, EdTech solutions (LMS, digital classrooms), student performance data analysis, and programming instruction (Python, Java, C++, SQL). Cloud deployment experience (AWS).</p>
+                    <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">Python</span>
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">SQL</span>
+                        <span class="bg-neo-emerald/80 text-neo-black px-2 py-1">AWS</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-16 font-mono text-gray-500 text-sm">
+                <p>I hereby declare that the information provided above is true and accurate to the best of my knowledge and belief.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reports" class="py-24 bg-neo-black border-t-4 border-black overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div
+                class="flex items-center gap-2 mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20">
+                <div class="flex gap-2">
+                    <div class="h-3 w-3 bg-red-500 rounded-full border border-black"></div>
+                    <div class="h-3 w-3 bg-yellow-500 rounded-full border border-black"></div>
+                    <div class="h-3 w-3 bg-green-500 rounded-full border border-black"></div>
+                </div>
+                <h2 class="font-mono text-white text-xl font-bold ml-4 tracking-tighter">USER_REPORTS.txt</h2>
+                <div class="ml-8 px-2 bg-neo-blue text-black text-[10px] font-black uppercase">LIVE_FEED</div>
+            </div>
+        </div>
+
+        <div class="marquee-container group cursor-hover">
+            <div class="marquee-content flex gap-8 py-12 px-4 select-none">
+                <!-- Original Set -->
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-emerald/50 hover:-translate-y-2 hover:shadow-glow-emerald transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal cursor-hover">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-emerald"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-emerald text-xs font-bold tracking-widest uppercase">REPORT_001.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ L J
+                        University</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Arham Proved no matter how pressure or
+                        less time is he makes projects complete outstandingly"</p>
+                    <div class="flex text-neo-emerald/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Alpha
+                        Consultancy</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and actually has good
+                        taste in design. A rare combination."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-emerald/50 hover:-translate-y-2 hover:shadow-glow-emerald transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal cursor-hover">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-emerald"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-emerald text-xs font-bold tracking-widest uppercase">REPORT_003.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ L J
+                        University</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Cleanest code I've seen in years. He
+                        knows how to handle complex state management."</p>
+                    <div class="flex text-neo-emerald/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
+                            REPORT_004.log</div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @
+                        CreativeChaos</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Creative designing idea and provided a
+                        Unique UI experience."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
+                            REPORT_005.log</div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @
+                        TechFlow</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Highly intuitive UX. Delivered exactly
+                        what we needed before we even knew we needed it."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <!-- Duplicate Set for Loop -->
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-emerald/50 hover:-translate-y-2 hover:shadow-glow-emerald transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal cursor-hover">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-emerald"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-emerald text-xs font-bold tracking-widest uppercase">REPORT_001.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ L J
+                        University</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Arham didn't just build a website, he
+                        built a war machine. Our conversions tripled in a week."</p>
+                    <div class="flex text-neo-emerald/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Alpha
+                        Consultancy</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and actually has good
+                        taste in design. A rare combination."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-emerald/50 hover:-translate-y-2 hover:shadow-glow-emerald transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal cursor-hover">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-emerald"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-emerald text-xs font-bold tracking-widest uppercase">REPORT_003.log
+                        </div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ L J
+                        University</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Cleanest code I've seen in years. He
+                        knows how to handle complex state management."</p>
+                    <div class="flex text-neo-emerald/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
+                            REPORT_004.log</div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @
+                        CreativeChaos</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"The attention to detail in the
+                        NeoBrutalist implementation is flawless. A master of his craft."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
+                            REPORT_005.log</div>
+                        <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
+                    </div>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @
+                        TechFlow</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Highly intuitive UX. Delivered exactly
+                        what we needed before we even knew we needed it."</p>
+                    <div class="flex text-neo-blue/60 gap-1 text-lg">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="bg-neo-black/90 border-4 border-neo-emerald shadow-hard-xl p-8 md:p-12 relative reveal mt-12">
+            <div
+                class="absolute -top-10 -left-6 bg-neo-emerald border-4 border-neo-blue px-6 py-2 shadow-hard rotate-[-5deg]">
+                <span class="font-black text-2xl text-neo-black">START A PROJECT</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85] text-neo-white">Let's<br>Work<br>Together.</h2>
+                    <p class="font-mono text-lg mb-8 text-gray-400">
+                        Open for full-time and contract opportunities in Data Analysis, Business Analytics, and IT leadership.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-blue text-white flex items-center justify-center border-2 border-neo-emerald">
+                                <i class="ri-mail-line text-xl"></i>
+                            </div>
+                            <a href="mailto:bharmotajatin@gmail.com"
+                                class="text-xl font-bold hover:bg-neo-blue cursor-hover">bharmotajatin@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-blue text-white flex items-center justify-center border-2 border-neo-emerald">
+                                <i class="ri-phone-line text-xl"></i>
+                            </div>
+                            <a href="tel:+919711855665" class="text-xl font-bold hover:bg-neo-blue cursor-hover">+91 9711855665</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-blue text-white flex items-center justify-center border-2 border-neo-emerald">
+                                <i class="ri-map-pin-line text-xl"></i>
+                            </div>
+                            <span class="text-xl font-bold">New Delhi, India 110019</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6 bg-neo-black/50 p-6 border-2 border-neo-blue">
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Identity</label>
+                        <input type="text" placeholder="NAME / COMPANY"
+                            class="bg-neo-black border-2 border-neo-blue p-3 text-neo-white placeholder-gray-500 font-bold focus:outline-none focus:bg-neo-blue/20 focus:border-neo-emerald focus:shadow-glow-emerald transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Coordinates</label>
+                        <input type="email" placeholder="EMAIL ADDRESS"
+                            class="bg-neo-black border-2 border-neo-blue p-3 text-neo-white placeholder-gray-500 font-bold focus:outline-none focus:bg-neo-blue/20 focus:border-neo-emerald focus:shadow-glow-emerald transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Transmission</label>
+                        <textarea rows="4" placeholder="PROJECT DETAILS..."
+                            class="bg-neo-black border-2 border-neo-blue p-3 text-neo-white placeholder-gray-500 font-bold focus:outline-none focus:bg-neo-blue/20 focus:border-neo-emerald focus:shadow-glow-emerald transition-all resize-none cursor-hover"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="magnetic w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-neo-emerald shadow-hard hover:bg-neo-emerald hover:text-neo-black hover:shadow-glow-emerald transition-all cursor-hover">
+                        TRANSMIT DATA
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-neo-black text-white py-16 px-4 border-t-8 border-neo-emerald font-mono relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-4xl font-black mb-6">JATIN BHARMOTA.</h2>
+                <p class="text-gray-400 max-w-sm">
+                    Data Analyst · Data Scientist · Business Analyst. Turning complex data into actionable insights.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-neo-emerald mb-4 border-b border-gray-700 pb-2">SITEMAP</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">Home</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">Work</a>
+                    </li>
+                    <li><a href="#education"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">Education</a>
+                    </li>
+                    <li><a href="#certifications"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">Certifications</a>
+                    </li>
+                    <li><a href="#about"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">About</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="hover:text-white hover:underline decoration-neo-emerald decoration-2 underline-offset-2 cursor-hover">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-neo-emerald mb-4 border-b border-gray-700 pb-2">SOCIALS</h3>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/jatin-b-3518b9206" target="_blank" rel="noopener"
+                        class="magnetic text-2xl hover:text-neo-blue hover:scale-125 transition-all duration-300 cursor-hover" title="LinkedIn"><i
+                            class="ri-linkedin-fill"></i></a>
+                    <a href="mailto:bharmotajatin@gmail.com"
+                        class="text-2xl hover:text-neo-emerald transition-colors duration-300 cursor-hover" title="Email"><i
+                            class="ri-mail-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-16 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+            <p>© 2026 Jatin Bharmota. All information true to the best of my knowledge.</p>
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full text-[20vw] font-black text-neo-emerald opacity-[0.06] leading-none select-none pointer-events-none text-center">
+            CODE
+        </div>
+    </footer>
+
+    </div><!-- /#main-content -->
+
+    <script>
+        // —— Loader: after tunnel animation, reveal page and run animations ——
+        (function() {
+            const loader = document.getElementById('page-loader');
+            const body = document.body;
+            const minLoadTime = 2800;
+            const start = performance.now();
+            function finishLoad() {
+                body.classList.remove('loading');
+                body.classList.add('page-loaded');
+                if (loader) loader.setAttribute('aria-hidden', 'true');
+                setTimeout(function() {
+                    document.querySelectorAll('.reveal').forEach(function(el, i) {
+                        setTimeout(function() { el.classList.add('active'); }, 60 * Math.min(i, 20));
+                    });
+                }, 150);
+            }
+            window.addEventListener('load', function() {
+                const elapsed = performance.now() - start;
+                setTimeout(finishLoad, Math.max(0, minLoadTime - elapsed));
+            });
+            setTimeout(finishLoad, minLoadTime + 400);
+        })();
+
+        // —— Skills Dashboard Charts (Chart.js) ——
+        (function() {
+            if (typeof Chart === 'undefined') return;
+            var colors = {
+                data: '#059669',
+                languages: '#2563eb',
+                frontend: '#7c3aed',
+                backend: '#d97706',
+                tools: '#e11d48',
+                cloud: '#0891b2'
+            };
+            var labels = ['Data & Analytics', 'Languages', 'Frontend', 'Backend', 'Tools & Data', 'Cloud & Infra'];
+            var palette = [colors.data, colors.languages, colors.frontend, colors.backend, colors.tools, colors.cloud];
+
+            function initCharts() {
+                var doughnutEl = document.getElementById('chart-doughnut');
+                if (doughnutEl && !doughnutEl.chart) {
+                    doughnutEl.chart = new Chart(doughnutEl, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: [7, 5, 5, 4, 3, 2],
+                                backgroundColor: palette,
+                                borderColor: '#0a0a0a',
+                                borderWidth: 2,
+                                hoverOffset: 6
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            aspectRatio: 1.4,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: { color: '#e2e8f0', font: { family: 'JetBrains Mono', size: 10 }, padding: 12 }
+                                }
+                            }
+                        }
+                    });
+                }
+                var barsEl = document.getElementById('chart-bars');
+                if (barsEl && !barsEl.chart) {
+                    barsEl.chart = new Chart(barsEl, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Strength',
+                                data: [95, 85, 75, 70, 90, 65],
+                                backgroundColor: palette.map(function(c) { return c + 'cc'; }),
+                                borderColor: palette,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            aspectRatio: 1.4,
+                            scales: {
+                                x: {
+                                    max: 100,
+                                    grid: { color: 'rgba(255,255,255,0.08)' },
+                                    ticks: { color: '#94a3b8', font: { size: 10 } }
+                                },
+                                y: {
+                                    grid: { display: false },
+                                    ticks: { color: '#e2e8f0', font: { size: 10 } }
+                                }
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(ctx) { return ctx.raw + '% focus'; }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+            if (document.readyState === 'complete') setTimeout(initCharts, 400);
+            else window.addEventListener('load', function() { setTimeout(initCharts, 400); });
+        })();
+
+        // —— Three.js 3D Scene ——
+        (function() {
+            const canvas = document.getElementById('three-canvas');
+            if (!canvas || typeof THREE === 'undefined') return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setClearColor(0x0a0a0a, 0.85);
+            camera.position.z = 8;
+
+            const blue = 0x2563eb, emerald = 0x059669;
+            const geo1 = new THREE.TetrahedronGeometry(0.8, 0);
+            const mat1 = new THREE.MeshBasicMaterial({ color: emerald, wireframe: true });
+            const mesh1 = new THREE.Mesh(geo1, mat1);
+            mesh1.position.set(-2, 1, -2);
+            scene.add(mesh1);
+
+            const geo2 = new THREE.BoxGeometry(1, 1, 1);
+            const mat2 = new THREE.MeshBasicMaterial({ color: blue, wireframe: true });
+            const mesh2 = new THREE.Mesh(geo2, mat2);
+            mesh2.position.set(2.5, -0.5, -3);
+            scene.add(mesh2);
+
+            const geo3 = new THREE.TorusGeometry(0.6, 0.15, 8, 24);
+            const mat3 = new THREE.MeshBasicMaterial({ color: emerald, wireframe: true });
+            const mesh3 = new THREE.Mesh(geo3, mat3);
+            mesh3.position.set(0, -1.5, -4);
+            scene.add(mesh3);
+
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                const t = Date.now() * 0.001;
+                mesh1.rotation.x = t * 0.3 + mouseY * 0.2;
+                mesh1.rotation.y = t * 0.4 + mouseX * 0.2;
+                mesh2.rotation.x = t * 0.2;
+                mesh2.rotation.y = t * 0.35;
+                mesh3.rotation.x = t * 0.25;
+                mesh3.rotation.y = t * 0.3;
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+
+        // —— Custom Cursor: single dot, grow + emerald on hover ——
+        const cursor = document.getElementById('cursor');
+        const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
+
+        document.addEventListener('mousemove', (e) => {
+            if (cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursor.style.transform = 'translate(-50%, -50%)';
+            }
+        });
+
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (cursor) {
+                    cursor.style.width = '60px';
+                    cursor.style.height = '60px';
+                    cursor.style.backgroundColor = '#059669';
+                    cursor.style.mixBlendMode = 'normal';
+                    cursor.style.border = '2px solid #2563eb';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                if (cursor) {
+                    cursor.style.width = '24px';
+                    cursor.style.height = '24px';
+                    cursor.style.backgroundColor = '#fff';
+                    cursor.style.mixBlendMode = 'difference';
+                    cursor.style.border = '2px solid black';
+                }
+            });
+        });
+
+        // —— Magnetic effect for .magnetic ——
+        document.querySelectorAll('.magnetic').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (e.clientX - cx) * 0.15;
+                const dy = (e.clientY - cy) * 0.15;
+                el.style.transform = `translate(${dx}px, ${dy}px)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+            });
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Progress bar
+        let ticking = false;
+        function updateProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const bar = document.getElementById("progressBar");
+            if (bar) bar.style.width = (height ? (winScroll / height) * 100 : 0) + "%";
+            ticking = false;
+        }
+        window.addEventListener('scroll', () => {
+            if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+        }, { passive: true });
+        updateProgress();
+    </script>
+</body>
+
+
+</html>
