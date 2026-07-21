@@ -1,0 +1,43 @@
+/* BIRD AIRPORT SERVICES – first image theme */
+:root {
+  --neo-bg: #f1f5f9;
+  --neo-card: #ffffff;
+  --neo-green: #22c55e;
+  --neo-green-dark: #16a34a;
+  --neo-yellow: #eab308;
+  --neo-yellow-light: #fef9c3;
+  --neo-orange: #f97316;
+  --neo-red: #ef4444;
+  --neo-blue: #3b82f6;
+  --logo-blue: #0ea5e9;
+  --neo-text: #1e293b;
+  --neo-text-muted: #64748b;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --radius: 12px;
+  --radius-pill: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--neo-bg);
+  color: var(--neo-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Focus for keyboard / a11y */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--neo-green);
+  outline-offset: 2px;
+}

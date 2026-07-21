@@ -337,7 +337,68 @@
         .chart-card h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; }
         .chart-card canvas { max-height: 220px; width: 100% !important; }
 
-        /* Three.js canvas behind content */
+        /* —— React Bits-style Orb Background (animated blobs) — see https://www.reactbits.dev/backgrounds/orb —— */
+        .orb-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .orb-mouse-layer {
+            position: absolute;
+            inset: -15%;
+            transition: transform 0.25s ease-out;
+        }
+        .orb-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.7;
+            animation: orb-float 20s ease-in-out infinite;
+        }
+        .orb-blob.emerald {
+            width: min(90vmax, 700px);
+            height: min(90vmax, 700px);
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.75) 0%, rgba(5, 150, 105, 0.35) 35%, transparent 65%);
+            top: -25%;
+            left: -15%;
+            animation-delay: 0s;
+            animation-duration: 22s;
+        }
+        .orb-blob.blue {
+            width: min(80vmax, 600px);
+            height: min(80vmax, 600px);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.7) 0%, rgba(37, 99, 235, 0.25) 40%, transparent 65%);
+            bottom: -20%;
+            right: -10%;
+            animation-delay: -7s;
+            animation-duration: 25s;
+        }
+        .orb-blob.accent {
+            width: min(55vmax, 400px);
+            height: min(55vmax, 400px);
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, rgba(37, 99, 235, 0.3) 45%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -12s;
+            animation-duration: 18s;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(5%, -8%) scale(1.05); }
+            50% { transform: translate(-6%, 5%) scale(0.98); }
+            75% { transform: translate(4%, 6%) scale(1.02); }
+        }
+        .orb-blob.accent { animation-name: orb-float-accent; }
+        @keyframes orb-float-accent {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            33% { transform: translate(calc(-50% + 4%), calc(-50% - 5%)) scale(1.08); }
+            66% { transform: translate(calc(-50% - 3%), calc(-50% + 4%)) scale(0.95); }
+        }
+
+        /* Three.js canvas behind orbs and content */
         #three-canvas {
             position: fixed;
             top: 0;
@@ -346,7 +407,7 @@
             height: 100%;
             z-index: -1;
         }
-        .hero-section { position: relative; z-index: 1; }
+        .hero-section { position: relative; z-index: 2; }
 
         /* —— Page Loader: Black Hole Tunnel —— */
         body.loading { overflow: hidden; }
@@ -453,6 +514,14 @@
     </div>
 
     <div id="main-content">
+    <!-- React Bits-style Orb Background -->
+    <div class="orb-background" aria-hidden="true">
+        <div class="orb-mouse-layer">
+            <div class="orb-blob emerald"></div>
+            <div class="orb-blob blue"></div>
+            <div class="orb-blob accent"></div>
+        </div>
+    </div>
     <!-- Three.js 3D Background -->
     <canvas id="three-canvas"></canvas>
 
@@ -1335,6 +1404,17 @@
             else window.addEventListener('load', function() { setTimeout(initCharts, 400); });
         })();
 
+        // —— Orb background: subtle mouse-follow (React Bits-style) ——
+        (function() {
+            const layer = document.querySelector('.orb-mouse-layer');
+            if (!layer) return;
+            document.addEventListener('mousemove', function(e) {
+                var x = (e.clientX / window.innerWidth - 0.5) * 16;
+                var y = (e.clientY / window.innerHeight - 0.5) * 16;
+                layer.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+            });
+        })();
+
         // —— Three.js 3D Scene ——
         (function() {
             const canvas = document.getElementById('three-canvas');
@@ -1344,7 +1424,7 @@
             const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.setClearColor(0x0a0a0a, 0.85);
+            renderer.setClearColor(0x0a0a0a, 0.5);
             camera.position.z = 8;
 
             const blue = 0x2563eb, emerald = 0x059669;

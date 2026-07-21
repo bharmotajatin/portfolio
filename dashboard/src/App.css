@@ -1,0 +1,564 @@
+/* —— Layout —— */
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.three-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+/* —— Header (BIRD AIRPORT SERVICES theme) —— */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 24px;
+  margin: 0 -24px 24px -24px;
+  background: var(--neo-card);
+  box-shadow: var(--shadow-card);
+  border-radius: 0 0 var(--radius) var(--radius);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--logo-blue);
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--logo-blue);
+  letter-spacing: 0.04em;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-tab {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--neo-text-muted);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-tab:hover {
+  background: #f1f5f9;
+  color: var(--neo-text);
+}
+
+.nav-tab.active {
+  background: var(--neo-green);
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.user-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neo-text);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neo-green), var(--neo-blue));
+}
+
+.date-range-input {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  min-width: 180px;
+  background: white;
+}
+
+.btn-export {
+  padding: 8px 16px;
+  background: var(--neo-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-export:hover {
+  background: var(--neo-green-dark);
+  transform: translateY(-1px);
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* —— Hero & filters (first image: large filter buttons) —— */
+.dashboard-hero {
+  margin-bottom: 28px;
+}
+
+.dashboard-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--neo-text);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-subtitle {
+  font-size: 0.925rem;
+  color: var(--neo-text-muted);
+  margin: 0 0 20px 0;
+  max-width: 520px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 14px 28px;
+  border: 2px solid #cbd5e1;
+  background: var(--neo-card);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--neo-text);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filter-tab:hover {
+  border-color: var(--neo-green);
+  color: var(--neo-green);
+  background: #f0fdf4;
+}
+
+.filter-tab.active {
+  background: var(--neo-green);
+  border-color: var(--neo-green);
+  color: white;
+}
+
+.filter-tab.active:hover {
+  background: var(--neo-green-dark);
+  border-color: var(--neo-green-dark);
+  color: white;
+}
+
+.hero-helper {
+  font-size: 0.8rem;
+  color: var(--neo-text-muted);
+  margin-top: 10px;
+}
+
+/* —— KPI cards (green, yellow, light yellow, white) —— */
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpi-card {
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  min-height: 130px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.kpi-card--green {
+  background: var(--neo-green);
+  color: white;
+  border: none;
+}
+
+.kpi-card--yellow {
+  background: var(--neo-yellow);
+  color: #1e293b;
+  border: none;
+}
+
+.kpi-card--orange {
+  background: var(--neo-yellow-light);
+  color: #1e293b;
+  border: none;
+}
+
+.kpi-card--white {
+  background: var(--neo-card);
+  color: var(--neo-text);
+  border: 1px solid #e2e8f0;
+}
+
+.kpi-card__icon {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.kpi-card__icon--cross {
+  color: var(--neo-red);
+}
+
+.kpi-card__value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.kpi-card__title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+.kpi-card--white .kpi-card__title {
+  opacity: 1;
+  color: var(--neo-text-muted);
+}
+
+.kpi-card__title--block {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.kpi-card__trend {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.kpi-card__line {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.kpi-card__trend-inline {
+  font-size: 0.7rem;
+  color: var(--neo-text-muted);
+  font-weight: 500;
+}
+
+.text-green {
+  color: var(--neo-green);
+}
+
+.text-orange {
+  color: var(--neo-orange);
+}
+
+/* —— Metric cards (Top Airlines, Flight Types, Delay Flights) —— */
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .metric-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  background: var(--neo-card);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #e2e8f0;
+}
+
+.metric-card__title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--neo-text);
+  margin: 0 0 14px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.metric-card__item .trend-badge {
+  font-size: 0.7rem;
+  color: var(--neo-text-muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.metric-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.metric-card__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  color: var(--neo-text);
+}
+
+.metric-card__icon {
+  font-size: 1rem;
+}
+
+.metric-card__item--green {
+  color: var(--neo-green);
+}
+
+.metric-card__item--orange {
+  color: var(--neo-orange);
+}
+
+/* —— Charts grid —— */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  background: var(--neo-card);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #e2e8f0;
+}
+
+.chart-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--neo-text);
+  margin: 0 0 2px 0;
+}
+
+.chart-card__meta {
+  font-size: 0.75rem;
+  color: var(--neo-text-muted);
+  margin-bottom: 14px;
+}
+
+.chart-card__desc {
+  font-size: 0.8rem;
+  color: var(--neo-text-muted);
+  margin-top: 4px;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+/* —— Data table (second image parameters) —— */
+.table-section {
+  margin-top: 16px;
+}
+
+.table-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.table-section__header > div:first-child {
+  min-width: 0;
+}
+
+.table-section__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--neo-text);
+  margin: 0 0 4px 0;
+}
+
+.table-section__intro {
+  font-size: 0.85rem;
+  color: var(--neo-text-muted);
+  margin: 0 0 12px 0;
+  max-width: 560px;
+}
+
+.table-section__filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--neo-text);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--neo-green);
+  color: var(--neo-green);
+}
+
+.filter-btn.active {
+  background: var(--neo-green);
+  border-color: var(--neo-green);
+  color: white;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius);
+  background: var(--neo-card);
+  box-shadow: var(--shadow-card);
+}
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.flight-table th,
+.flight-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+  border-left-width: 2px;
+}
+
+.flight-table th {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.flight-table td {
+  color: var(--neo-text);
+}
+
+.flight-table .th-total {
+  background: var(--neo-yellow) !important;
+  font-weight: 800;
+}
+
+.flight-table .td-total {
+  font-weight: 700;
+  background: #fef9c3;
+}
+
+.flight-table .row-combined {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.flight-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.flight-table tbody tr.row-combined:hover {
+  background: #e2e8f0;
+}

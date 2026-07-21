@@ -6,4 +6,4 @@ Write-Host "Serving from: $dir"
 Write-Host "Press Ctrl+C to stop"
 Start-Process "http://localhost:$port"
 Set-Location $dir
-python -m http.server $port
+python -m http.server $port --bind 127.0.0.1
