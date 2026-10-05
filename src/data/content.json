@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "title": "Jatin Bharmota | Data Analyst & Business Systems Analyst",
+    "description": "Jatin Bharmota — Data Analyst & Business Systems Analyst with 4+ years across aviation and IT. Predictive modeling, MIS reporting, SQL optimization, Power BI and enterprise system architecture.",
+    "siteUrl": "https://portfolio-sage-mu-53.vercel.app"
+  },
+  "sections": [
+    {
+      "id": "about",
+      "label": "About",
+      "icon": "ri-user-3-line",
+      "visible": true
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "icon": "ri-stack-line",
+      "visible": true
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "icon": "ri-briefcase-4-line",
+      "visible": true
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "icon": "ri-folder-chart-line",
+      "visible": true
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "icon": "ri-graduation-cap-line",
+      "visible": true
+    },
+    {
+      "id": "testimonials",
+      "label": "Testimonials",
+      "icon": "ri-chat-quote-line",
+      "visible": true
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "icon": "ri-mail-send-line",
+      "visible": true
+    }
+  ],
+  "profile": {
+    "name": "Jatin Bharmota",
+    "roles": [
+      "Data Analyst",
+      "Business Systems Analyst",
+      "BI Developer",
+      "Aviation Tech Lead"
+    ],
+    "headline": "I turn messy operational data into decisions that move aircraft, revenue and teams.",
+    "summary": "Results-driven Data Analyst & Business Systems Analyst with 4+ years across aviation and IT — architecting enterprise platforms, building predictive models and shipping MIS dashboards that leadership actually uses.",
+    "about": "I sit at the intersection of data, systems and business. At Bird Group I govern a mission-critical aviation platform spanning 18 airport stations, translate strategy into technology, and build the analytics layer that tells us what is working. Before that I ran cloud environments for Expedia Group and taught the next generation of developers. I care about clean data models, fast queries and dashboards that answer the question before it is asked.",
+    "highlights": [
+      "Enterprise system architecture & SDLC governance",
+      "Predictive modeling, EDA & statistical analysis",
+      "MIS / KPI reporting with Power BI, Tableau & Excel",
+      "SQL optimization, automation & data modelling"
+    ],
+    "location": "New Delhi, India",
+    "email": "bharmotajatin@gmail.com",
+    "phone": "+91 9711855665",
+    "availability": "Open to full-time & contract roles",
+    "available": true,
+    "avatar": "/Assets/images/portrait.jpg",
+    "resume": "/Assets/Resume/RESUME_2026.pdf",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/jatin-bharmota",
+        "icon": "ri-linkedin-fill"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/bharmotajatin",
+        "icon": "ri-github-fill"
+      },
+      {
+        "label": "GitLab",
+        "url": "https://gitlab.com/bharmotajatin",
+        "icon": "ri-gitlab-fill"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:bharmotajatin@gmail.com",
+        "icon": "ri-mail-fill"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "label": "Years of experience",
+      "value": 4,
+      "suffix": "+"
+    },
+    {
+      "label": "Airport stations",
+      "value": 18,
+      "suffix": ""
+    },
+    {
+      "label": "Airline partners",
+      "value": 20,
+      "suffix": "+"
+    },
+    {
+      "label": "Faster analytics",
+      "value": 35,
+      "suffix": "%"
+    }
+  ],
+  "marquee": [
+    "Data Analyst",
+    "Business Systems",
+    "Predictive Modelling",
+    "Power BI",
+    "SQL Optimization",
+    "MIS Reporting",
+    "Aviation Tech",
+    "AWS"
+  ],
+  "skills": [
+    {
+      "id": "data",
+      "name": "Data & AI/ML",
+      "icon": "ri-line-chart-line",
+      "color": "#34d399",
+      "level": 92,
+      "items": [
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Machine Learning",
+        "Predictive Modelling",
+        "EDA",
+        "Statistical Analysis",
+        "AI-Driven Analytics"
+      ]
+    },
+    {
+      "id": "languages",
+      "name": "Languages",
+      "icon": "ri-code-s-slash-line",
+      "color": "#60a5fa",
+      "level": 88,
+      "items": [
+        "Python",
+        "SQL",
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "C++",
+        "PHP",
+        "MATLAB"
+      ]
+    },
+    {
+      "id": "databases",
+      "name": "Databases",
+      "icon": "ri-database-2-line",
+      "color": "#a78bfa",
+      "level": 85,
+      "items": [
+        "MySQL",
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Query Optimization",
+        "Data Modelling",
+        "REST APIs",
+        "Big Data Processing"
+      ]
+    },
+    {
+      "id": "bi",
+      "name": "BI & Reporting",
+      "icon": "ri-bar-chart-box-line",
+      "color": "#fbbf24",
+      "level": 90,
+      "items": [
+        "Power BI",
+        "Tableau",
+        "Advanced Excel",
+        "Excel VBA & Macros",
+        "Dashboard Development",
+        "MIS Reporting",
+        "KPI Reporting"
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud & Tools",
+      "icon": "ri-cloud-line",
+      "color": "#fb7185",
+      "level": 80,
+      "items": [
+        "AWS",
+        "AWS Bedrock",
+        "Vercel",
+        "Next.js",
+        "React",
+        "Git",
+        "JIRA",
+        "Postman",
+        "MS Visio"
+      ]
+    },
+    {
+      "id": "ba",
+      "name": "Business Analysis",
+      "icon": "ri-briefcase-4-line",
+      "color": "#22d3ee",
+      "level": 86,
+      "items": [
+        "Business Analysis",
+        "Systems Analysis",
+        "Gap Analysis",
+        "BRD / FRD",
+        "UAT",
+        "Agile / Scrum",
+        "SDLC",
+        "Enterprise Architecture"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "bird-bsa",
+      "role": "Business & Systems Analyst",
+      "company": "Bird Group — Bird Flight Services India",
+      "location": "Vasant Vihar, New Delhi",
+      "start": "Jan 2026",
+      "end": "Present",
+      "highlights": [
+        "Architected and govern a mission-critical aviation platform across 18 stations, cutting system downtime by ~30% through high-availability standards.",
+        "Own SDLC governance for 5+ concurrent modules with 100% regulatory compliance and on-time delivery.",
+        "Lead system & analytics integrations for 18 airport stations, improving operational reporting efficiency by 25%."
+      ],
+      "tags": [
+        "Enterprise Architecture",
+        "SDLC",
+        "Aviation",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "bird-mkt",
+      "role": "Executive — Marketing & Business Development",
+      "company": "Bird Group — Bird Worldwide Flight Services",
+      "location": "Vasant Vihar, New Delhi",
+      "start": "Dec 2024",
+      "end": "Jan 2026",
+      "highlights": [
+        "Sole signing authority for ground-handling agreements across 18 major Indian airports with 20+ domestic and international carriers.",
+        "Mined airline & flight-record datasets for revenue opportunities, lifting ground-handling utilisation by 15%.",
+        "Ran large-scale MIS and analytics workflows, reducing processing time by 35% through automation."
+      ],
+      "tags": [
+        "MIS",
+        "Revenue Analytics",
+        "Negotiation",
+        "Automation"
+      ]
+    },
+    {
+      "id": "expedia",
+      "role": "Process Associate",
+      "company": "Expedia Group — IGT Solutions",
+      "location": "Gurgaon, Haryana",
+      "start": "Dec 2023",
+      "end": "Jul 2024",
+      "highlights": [
+        "Configured and launched application environments on AWS supporting 3+ production systems at 99.5% uptime.",
+        "Streamlined operational and QC workflows, reducing task turnaround time by 20%.",
+        "Applied analytical tooling to support project management and business outcomes."
+      ],
+      "tags": [
+        "AWS",
+        "Cloud Ops",
+        "Process Improvement"
+      ]
+    },
+    {
+      "id": "educonclave",
+      "role": "IT Consultant & Faculty",
+      "company": "Edu Conclave",
+      "location": "New Delhi",
+      "start": "May 2020",
+      "end": "Jul 2023",
+      "highlights": [
+        "Administered complete IT infrastructure — hardware, software and networking — for 100+ daily users.",
+        "Rolled out LMS and digital classrooms, raising student engagement scores by 30% over two years.",
+        "Analysed performance data across 5+ batches; structured reporting improved pass rates by 20%."
+      ],
+      "tags": [
+        "IT Infrastructure",
+        "EdTech",
+        "Reporting"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "athman",
+      "title": "Athman — Meditation & Wellness Platform",
+      "category": "Web App",
+      "year": "2026",
+      "description": "Full-stack sanctuary for meditation and emotional wellness with bookings, payments, admin CMS and transactional email.",
+      "details": "Production Next.js app with NextAuth admin, MongoDB Atlas, Razorpay checkout with coupons and GST receipts, Resend emails, image uploads and a GSAP + Lenis motion layer. Deployed on Vercel.",
+      "tags": [
+        "Next.js",
+        "MongoDB",
+        "NextAuth",
+        "Razorpay",
+        "GSAP"
+      ],
+      "liveUrl": "https://athman-tau.vercel.app",
+      "repoUrl": "https://github.com/bharmotajatin/Athman",
+      "image": "/uploads/athman.jpg",
+      "icon": "ri-leaf-line",
+      "color": "#a78bfa",
+      "featured": true
+    },
+    {
+      "id": "bfs-safety",
+      "title": "BFS Safety Incident Tracker",
+      "category": "Web App",
+      "year": "2026",
+      "description": "Role-based safety incident platform for Bird Flight Services with SLA tracking, audit timeline and executive reporting.",
+      "details": "Next.js App Router + MongoDB with five roles (admin, safety head, investigator, duty manager, viewer), incident lifecycle with SLA warnings and breach alerts, notification centre, Excel import, PDF/Excel exports and AI-assisted summaries.",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "MongoDB",
+        "RBAC",
+        "Chart.js"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/bharmotajatin/birdSafetyAviationDashboard",
+      "image": "",
+      "icon": "ri-shield-check-line",
+      "color": "#fb7185",
+      "featured": true
+    },
+    {
+      "id": "flight-dashboard",
+      "title": "Scheduled Flight Operations Dashboard",
+      "category": "Dashboard",
+      "year": "2026",
+      "description": "Interactive ops dashboard for Bird Airport Services — KPIs, airline rankings, delay breakdowns and service ratings over a 3D backdrop.",
+      "details": "React + Recharts + React Three Fiber. Aggregates scheduled vs non-scheduled flights, top airlines, delay status and service-rating trends into a single operational view.",
+      "tags": [
+        "React",
+        "Recharts",
+        "Three.js",
+        "Aviation"
+      ],
+      "liveUrl": "/dashboard/",
+      "repoUrl": "https://github.com/bharmotajatin/portfolio/tree/main/dashboard",
+      "image": "/uploads/flight-dashboard.jpg",
+      "icon": "ri-flight-takeoff-line",
+      "color": "#22d3ee",
+      "featured": true
+    },
+    {
+      "id": "flight-reservation",
+      "title": "Flight Reservation Information System",
+      "category": "Data",
+      "year": "2024",
+      "description": "Reservation system on a normalised relational schema — 35% faster queries through indexing and query design.",
+      "details": "Designed the ER model and normalised schema, tuned indexes and rewrote hot queries for a 35% latency reduction.",
+      "tags": [
+        "SQL",
+        "Schema Design",
+        "Indexing"
+      ],
+      "liveUrl": "",
+      "repoUrl": "",
+      "image": "",
+      "icon": "ri-plane-line",
+      "color": "#60a5fa",
+      "featured": false
+    },
+    {
+      "id": "aqi",
+      "title": "Air Quality Index Analytics",
+      "category": "Dashboard",
+      "year": "2024",
+      "description": "Multi-city analytics dashboard covering 10+ environmental metrics for trend discovery across regions.",
+      "details": "Python EDA pipeline feeding a Power BI model with city-level drill-downs, seasonal trends and pollutant correlations.",
+      "tags": [
+        "Python",
+        "Power BI",
+        "EDA"
+      ],
+      "liveUrl": "",
+      "repoUrl": "",
+      "image": "",
+      "icon": "ri-windy-line",
+      "color": "#34d399",
+      "featured": false
+    },
+    {
+      "id": "portfolio",
+      "title": "This Portfolio + Admin CMS",
+      "category": "Web App",
+      "year": "2026",
+      "description": "3D portfolio with React Three Fiber and React Bits, plus a password-protected admin that commits content straight to GitHub.",
+      "details": "Vite + React 19, Tailwind 4, GSAP, Motion and R3F. Content lives in a single JSON file edited from /admin; saving commits to GitHub and Vercel redeploys automatically.",
+      "tags": [
+        "React",
+        "Three.js",
+        "Vercel",
+        "Serverless"
+      ],
+      "liveUrl": "https://portfolio-sage-mu-53.vercel.app",
+      "repoUrl": "https://github.com/bharmotajatin/portfolio",
+      "image": "",
+      "icon": "ri-global-line",
+      "color": "#fbbf24",
+      "featured": false
+    }
+  ],
+  "education": [
+    {
+      "id": "mca",
+      "degree": "MCA — AI & Machine Learning",
+      "school": "Manav Rachna International Institute of Research and Studies",
+      "start": "Jul 2024",
+      "end": "Jul 2026",
+      "score": "CGPA 8.2 / 10",
+      "description": "Master of Computer Applications specialising in Artificial Intelligence & Machine Learning."
+    },
+    {
+      "id": "bca",
+      "degree": "BCA",
+      "school": "Integrated Institute of Technology, Dwarka",
+      "start": "Aug 2020",
+      "end": "Jun 2023",
+      "score": "CGPA 8.5 / 10",
+      "description": "Bachelor of Computer Applications — SQL Server, MySQL, Python, Java, C++, JavaScript, PHP, MATLAB."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "iimc",
+      "name": "Data Analysis",
+      "issuer": "IIM Calcutta",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "id": "cn-excel",
+      "name": "Advanced Excel & Data Analysis",
+      "issuer": "Coding Ninjas",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "id": "aws-bedrock",
+      "name": "AWS Compute Services & Amazon Bedrock",
+      "issuer": "AWS",
+      "year": "2024",
+      "url": ""
+    },
+    {
+      "id": "crypto",
+      "name": "Cryptocurrency Trading",
+      "issuer": "Online",
+      "year": "2024",
+      "url": ""
+    }
+  ],
+  "competencies": [
+    "Stakeholder Management",
+    "Cross-functional Leadership",
+    "Data Storytelling",
+    "Problem Solving",
+    "End-to-end Delivery"
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "quote": "Jatin turned our scattered data into clear, actionable dashboards. Reporting that used to take days now takes minutes.",
+      "author": "Operations Lead",
+      "role": "Aviation services",
+      "rating": 5
+    },
+    {
+      "id": "t2",
+      "quote": "No matter the pressure or the timeline, he delivers to an outstanding standard.",
+      "author": "Student",
+      "role": "L J University",
+      "rating": 5
+    },
+    {
+      "id": "t3",
+      "quote": "Fast, reliable, and genuinely good taste in design. A rare combination.",
+      "author": "CEO",
+      "role": "Alpha Consultancy",
+      "rating": 5
+    },
+    {
+      "id": "t4",
+      "quote": "Highly intuitive UX. Delivered exactly what we needed before we knew we needed it.",
+      "author": "UX Designer",
+      "role": "TechFlow",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "heading": "Let's build something data-driven.",
+    "subheading": "Open for full-time and contract opportunities in Data Analysis, Business Analytics and IT leadership.",
+    "formEndpoint": ""
+  }
+}

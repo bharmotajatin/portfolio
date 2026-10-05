@@ -1,70 +1,39 @@
+# Jatin Bharmota — Portfolio
 
+Personal portfolio built with React, Vite, Tailwind CSS 4, Three.js (react-three-fiber), GSAP, Motion and components from [React Bits](https://reactbits.dev). Includes a password-protected admin at `/admin` for editing every section, and the Scheduled Flight Dashboard project served at `/dashboard/`.
 
----
-
-## /// TECH_STACK
-
-| COMPONENT | TECHNOLOGY | STATUS |
-| :--- | :--- | :--- |
-| **CORE** | `HTML5` | [OPTIMIZED] |
-| **STYLING** | `TailwindCSS` | [LOADED] |
-| **SCRIPTING** | `Vanilla JS` | [ACTIVE] |
-| **APIs** | `GitHub API` + `LeetCard` | [STREAMING] |
-| **ICONS** | `Remix Icons` | [LINKED] |
-| **FONTS** | `Space Grotesk` + `JetBrains Mono` | [IMPORTED] |
-
----
-
-## /// FEATURES_LOG
-
-### 01. CUSTOM_CURSOR
-> A custom-built cursor that reacts to interactive elements.
-> - **Normal State**: Small crosshair/dot.
-> - **Hover State**: Expands to a Neo-Yellow block with black borders.
-
-### 02. GLITCH_EFFECTS
-> CSS-only glitch animations on hover states.
-> - `mix-blend-mode: difference` for high contrast.
-> - Random translation keyframes for that "broken" feel.
-
-### 03. MARQUEE_SCROLL
-> Infinite scrolling text banners.
-> - Pure CSS animation.
-> - **Direction**: Left-to-Right & Right-to-Left.
-
-### 04. REVEAL_ANIMATION
-> Elements reveal themselves as you scroll.
-> - `IntersectionObserver` API.
-> - Smooth translate-Y transitions.
-
-### 05. CODING_STATS_INTEGRATION
-> Real-time data visualization of development activity.
-> - **Dual-Profile Interface**: Side-by-side GitHub and LeetCode stats.
-> - **Live GitHub API**: Dynamic fetching of Repos, Followers, and Commits.
-> - **LeetCard Integration**: Real-time LeetCode problem-solving heatmap.
-> - **Parallel Layout**: Perfectly balanced columns with mirrored headers and activity matrices.
-
----
-
-## /// FILE_STRUCTURE
+## Develop
 
 ```bash
-.
-├── Assets/
-│   ├── images/          # [DIR] Project thumbnails & Avatar
-│   └── Resume/          # [DIR] CV PDF file
-├── index.html           # [FILE] Main Entry Point
-└── README.md            # [FILE] You are here
+npm install
+npm run dev
 ```
 
-## /// CONTACT_COORDINATES
+- Site: http://localhost:5173
+- Admin: http://localhost:5173/admin (password `admin` unless `ADMIN_PASSWORD` is set in `.env.local`)
 
-**TRANSMISSION OPEN:**
-- **MAIL**: `topiwalaarham@gmail.com`
-- **GITHUB**: `Arham43-ops`
-- **LOCATION**: `Remote / Earth`
+In dev, admin saves write straight to `src/data/content.json` and uploads go to `public/uploads/`.
 
-> "I build digital products that refuse to be boring."
+## Content
 
----
-**© 2025 ARHAM.exe // SYSTEM_END**
+All site content lives in `src/data/content.json`. Edit it through the admin (recommended) or by hand. The admin can add, edit, duplicate, reorder and delete projects, experience, skills, education, certifications and testimonials, rename/reorder/hide sections, upload images and files, and import/export a JSON backup. A live preview shows unsaved edits.
+
+## Deploy (Vercel)
+
+`npm run build` builds the site and the dashboard into `dist/`. The `/api` folder holds the serverless functions used by the admin.
+
+Set these environment variables in the Vercel project (see `.env.example`):
+
+| Variable | Purpose |
+| --- | --- |
+| `ADMIN_PASSWORD` | Admin login password (required in production) |
+| `GITHUB_TOKEN` | Token with Contents read/write on the repo, so saves can commit |
+| `GITHUB_REPO` | `owner/name`, defaults to `bharmotajatin/portfolio` |
+| `GITHUB_BRANCH` | Defaults to `main` |
+| `ADMIN_SECRET` | Optional cookie-signing secret |
+
+On Vercel, saving in the admin commits `src/data/content.json` (and uploads into `public/uploads/`) to GitHub, which triggers a redeploy; changes are live in about a minute.
+
+## Contact form
+
+Messages open the visitor's mail app by default. To receive them directly, paste a form endpoint (e.g. Formspree) into Admin → Contact form.

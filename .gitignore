@@ -10,5 +10,13 @@ desktop.ini
 *.swo
 *~
 
-# Optional: uncomment if you use node
-# node_modules/
+# Node / build
+node_modules/
+dist/
+dashboard/node_modules/
+
+# Env & deploy
+.env
+.env.*
+!.env.example
+.vercel

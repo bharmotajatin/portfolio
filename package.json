@@ -1,0 +1,35 @@
+{
+  "name": "jatin-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:dashboard",
+    "build:site": "vite build",
+    "build:dashboard": "npm --prefix dashboard install --no-audit --no-fund && npm --prefix dashboard run build -- --base=/dashboard/ --outDir=../dist/dashboard --emptyOutDir",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
+    "motion": "^14.0.0",
+    "ogl": "^1.0.11",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remixicon": "^4.9.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.2"
+  }
+}
