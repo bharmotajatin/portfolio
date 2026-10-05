@@ -4,6 +4,7 @@ import SpotlightCard from '../components/reactbits/SpotlightCard';
 import LogoLoop from '../components/reactbits/LogoLoop';
 import SkillSphere from './SkillSphere';
 import { Reveal, SectionHeading, TiltCard } from './ui';
+import { Parallax } from './scrollfx';
 
 const hexToRgba = (hex, a) => {
   const h = hex.replace('#', '');
@@ -37,11 +38,13 @@ export default function Skills({ index }) {
         />
 
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.15fr]">
-          <Reveal>
-            <div className="mx-auto max-w-[560px]">
-              <SkillSphere skills={skills} />
-            </div>
-          </Reveal>
+          <Parallax speed={50}>
+            <Reveal>
+              <div className="mx-auto max-w-[560px]">
+                <SkillSphere skills={skills} />
+              </div>
+            </Reveal>
+          </Parallax>
 
           <div className="grid gap-4 sm:grid-cols-2">
             {skills.map((cat, i) => (

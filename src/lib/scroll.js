@@ -23,9 +23,16 @@ export function useSmoothScroll(enabled = true) {
   }, [enabled]);
 }
 
+export function lockScroll(locked) {
+  document.documentElement.style.overflow = locked ? 'hidden' : '';
+  if (locked) lenis?.stop();
+  else lenis?.start();
+}
+
 export function scrollToId(id) {
-  const target = id === 'top' ? 0 : document.getElementById(id);
-  if (target === null) return;
+  const el = id === 'top' ? 0 : document.getElementById(id);
+  if (el === null) return;
+  const target = el === 0 ? 0 : el.closest('[data-scroll-anchor]') || el;
   if (lenis) lenis.scrollTo(target, { offset: id === 'top' ? 0 : -24 });
   else if (target === 0) window.scrollTo({ top: 0, behavior: 'smooth' });
   else target.scrollIntoView({ behavior: 'smooth', block: 'start' });

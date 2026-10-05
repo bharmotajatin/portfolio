@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, LayoutGroup, motion } from 'motion/react';
 import { useContent } from '../lib/content';
+import { lockScroll } from '../lib/scroll';
 import { SectionHeading, TiltCard, external } from './ui';
 
 function ProjectVisual({ project, className = '' }) {
@@ -125,10 +127,10 @@ function ProjectModal({ project, onClose }) {
   useEffect(() => {
     const onKey = e => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
-    document.documentElement.style.overflow = 'hidden';
+    lockScroll(true);
     return () => {
       window.removeEventListener('keydown', onKey);
-      document.documentElement.style.overflow = '';
+      lockScroll(false);
     };
   }, [onClose]);
 
@@ -212,7 +214,7 @@ export default function Projects({ index }) {
           </AnimatePresence>
         </motion.div>
 
-        <AnimatePresence>{open && <ProjectModal project={open} onClose={() => setOpen(null)} />}</AnimatePresence>
+        {createPortal(<AnimatePresence>{open && <ProjectModal project={open} onClose={() => setOpen(null)} />}</AnimatePresence>, document.body)}
       </LayoutGroup>
     </section>
   );

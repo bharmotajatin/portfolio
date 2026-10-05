@@ -18,6 +18,12 @@
       "visible": true
     },
     {
+      "id": "process",
+      "label": "Process",
+      "icon": "ri-route-line",
+      "visible": true
+    },
+    {
       "id": "experience",
       "label": "Experience",
       "icon": "ri-briefcase-4-line",
@@ -229,6 +235,72 @@
         "Agile / Scrum",
         "SDLC",
         "Enterprise Architecture"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "id": "discover",
+      "title": "Discover",
+      "icon": "ri-search-eye-line",
+      "color": "#34d399",
+      "description": "Sit with operations, finance and leadership to pin down the decision behind the request and the KPIs that will measure it.",
+      "tools": [
+        "Stakeholder workshops",
+        "KPI trees",
+        "BRDs"
+      ]
+    },
+    {
+      "id": "engineer",
+      "title": "Engineer the data",
+      "icon": "ri-database-2-line",
+      "color": "#22d3ee",
+      "description": "Turn messy operational sources into clean, trusted tables with SQL pipelines, validation rules and documented definitions.",
+      "tools": [
+        "SQL",
+        "Python",
+        "ETL",
+        "Data validation"
+      ]
+    },
+    {
+      "id": "model",
+      "title": "Analyse & model",
+      "icon": "ri-brain-line",
+      "color": "#a78bfa",
+      "description": "Exploratory analysis, statistical testing and predictive models that explain what is happening and forecast what comes next.",
+      "tools": [
+        "Pandas",
+        "scikit-learn",
+        "Statistics",
+        "EDA"
+      ]
+    },
+    {
+      "id": "visualise",
+      "title": "Visualise",
+      "icon": "ri-bar-chart-box-line",
+      "color": "#fbbf24",
+      "description": "Dashboards and MIS reports designed for the person reading them: fast, focused and easy to drill into.",
+      "tools": [
+        "Power BI",
+        "Tableau",
+        "Excel",
+        "DAX"
+      ]
+    },
+    {
+      "id": "ship",
+      "title": "Ship & govern",
+      "icon": "ri-rocket-2-line",
+      "color": "#fb7185",
+      "description": "Roll out to users, train teams and govern the platform through the SDLC so the insight keeps paying off after launch.",
+      "tools": [
+        "SDLC",
+        "UAT",
+        "Training",
+        "Change management"
       ]
     }
   ],

@@ -132,14 +132,17 @@ function FloatingShapes() {
   ));
 }
 
-function Rig({ children }) {
+function Rig({ children, baseZ }) {
   const ref = useRef();
   useFrame(state => {
     const { x, y } = state.pointer;
-    ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, x * 0.35, 0.05);
-    ref.current.rotation.x = THREE.MathUtils.lerp(ref.current.rotation.x, -y * 0.2, 0.05);
+    const s = Math.min(window.scrollY / window.innerHeight, 1.2);
+    ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, x * 0.35 + s * 0.9, 0.05);
+    ref.current.rotation.x = THREE.MathUtils.lerp(ref.current.rotation.x, -y * 0.2 + s * 0.35, 0.05);
+    ref.current.rotation.z = THREE.MathUtils.lerp(ref.current.rotation.z, s * 0.25, 0.05);
     state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, x * 0.6, 0.04);
     state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, y * 0.4, 0.04);
+    state.camera.position.z = THREE.MathUtils.lerp(state.camera.position.z, baseZ - s * 3, 0.06);
     state.camera.lookAt(0, 0, 0);
   });
   return <group ref={ref}>{children}</group>;
@@ -175,7 +178,7 @@ export default function HeroScene() {
         <pointLight position={[4, 3, 4]} intensity={40} color="#34d399" />
         <pointLight position={[-4, -2, 3]} intensity={40} color="#a78bfa" />
         <pointLight position={[0, 4, -3]} intensity={25} color="#22d3ee" />
-        <Rig>
+        <Rig baseZ={compact ? 9 : 7}>
           <group position={compact ? [0, 0.6, 0] : [1.9, 0.1, 0]} scale={compact ? 0.8 : 1}>
             <DataCore />
             <OrbitRing radius={2.4} count={180} tilt={[0.4, 0, 0.2]} speed={0.25} color="#34d399" />

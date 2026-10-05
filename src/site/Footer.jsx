@@ -1,9 +1,17 @@
+import { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { useContent } from '../lib/content';
 import { scrollToId } from '../lib/scroll';
 import CircularText from '../components/reactbits/CircularText';
 
 export default function Footer() {
   const { profile, sections } = useContent();
+  const nameRef = useRef(null);
+  const still = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: nameRef, offset: ['start end', 'end end'] });
+  const nameY = useTransform(scrollYProgress, [0, 1], [160, 0]);
+  const nameScale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  const nameSpacing = useTransform(scrollYProgress, [0, 1], ['-0.12em', '-0.02em']);
 
   return (
     <footer className="relative overflow-hidden border-t border-white/5 pb-32 pt-20 md:pb-40">
@@ -37,9 +45,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="pointer-events-none mt-16 select-none text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.08)]">
+      <motion.div
+        ref={nameRef}
+        style={still ? undefined : { y: nameY, scale: nameScale, letterSpacing: nameSpacing }}
+        className="pointer-events-none mt-16 select-none text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.08)]"
+      >
         {profile.name.split(' ')[0].toUpperCase()}
-      </div>
+      </motion.div>
       <div className="mx-auto mt-4 max-w-7xl px-5 text-center font-mono text-xs text-slate-600 md:px-8">
         © {new Date().getFullYear()} {profile.name}. Built with React, Three.js & React Bits.
       </div>

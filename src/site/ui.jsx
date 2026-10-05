@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'motion/react';
 import DecryptedText from '../components/reactbits/DecryptedText';
+import { GhostIndex } from './scrollfx';
 
 export function SectionHeading({ index, eyebrow, title, accent, description, align = 'left' }) {
   const centered = align === 'center';
   return (
-    <div className={`mb-14 md:mb-20 ${centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}`}>
+    <div className={`relative isolate mb-14 md:mb-20 ${centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}`}>
+      <GhostIndex index={index} align={align} />
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

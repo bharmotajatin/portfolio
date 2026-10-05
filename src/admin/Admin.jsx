@@ -190,6 +190,7 @@ function ListEditor({ editor, value = [], onChange, ctx }) {
 const SECTION_DEFAULTS = {
   about: ['About', 'ri-user-3-line'],
   skills: ['Skills', 'ri-stack-line'],
+  process: ['Process', 'ri-route-line'],
   experience: ['Experience', 'ri-briefcase-4-line'],
   projects: ['Projects', 'ri-folder-chart-line'],
   education: ['Education', 'ri-graduation-cap-line'],

@@ -4,7 +4,8 @@ export const ICON_PICKS = [
   'ri-leaf-line', 'ri-windy-line', 'ri-cloud-line', 'ri-robot-2-line', 'ri-brain-line', 'ri-briefcase-4-line',
   'ri-stack-line', 'ri-terminal-box-line', 'ri-github-fill', 'ri-linkedin-fill', 'ri-gitlab-fill', 'ri-mail-fill',
   'ri-twitter-x-fill', 'ri-instagram-line', 'ri-youtube-fill', 'ri-medium-fill', 'ri-kaggle-fill', 'ri-file-user-line',
-  'ri-user-3-line', 'ri-folder-chart-line', 'ri-graduation-cap-line', 'ri-chat-quote-line', 'ri-mail-send-line', 'ri-award-line'
+  'ri-user-3-line', 'ri-folder-chart-line', 'ri-graduation-cap-line', 'ri-chat-quote-line', 'ri-mail-send-line', 'ri-award-line',
+  'ri-route-line', 'ri-search-eye-line', 'ri-rocket-2-line', 'ri-checkbox-circle-line', 'ri-lightbulb-flash-line', 'ri-team-line'
 ];
 
 const text = (key, label, extra = {}) => ({ key, label, type: 'text', ...extra });
@@ -113,6 +114,24 @@ export const GROUPS = [
           { key: 'icon', label: 'Icon', type: 'icon' },
           { key: 'color', label: 'Accent colour', type: 'color' },
           { key: 'featured', label: 'Featured', type: 'bool' }
+        ]
+      },
+      {
+        id: 'process',
+        label: 'Process steps',
+        icon: 'ri-route-line',
+        kind: 'list',
+        path: 'process',
+        description: 'The "How I work" steps. On desktop they slide sideways while the section is pinned as visitors scroll.',
+        itemLabel: s => s.title,
+        itemMeta: s => (s.tools || []).join(', '),
+        newItem: () => ({ title: 'New step', description: '', icon: 'ri-checkbox-circle-line', color: '#34d399', tools: [] }),
+        fields: [
+          text('title', 'Title', { required: true }),
+          area('description', 'Description', { rows: 3 }),
+          { key: 'tools', label: 'Tools / methods', type: 'tags' },
+          { key: 'icon', label: 'Icon', type: 'icon' },
+          { key: 'color', label: 'Accent colour', type: 'color' }
         ]
       },
       {

@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react';
-import { motion } from 'motion/react';
+import { lazy, Suspense, useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { useContent } from '../lib/content';
 import { scrollToId } from '../lib/scroll';
 import SplitText from '../components/reactbits/SplitText';
@@ -18,16 +18,32 @@ export default function Hero({ ready }) {
   const [first, ...rest] = profile.name.split(' ');
   const roles = profile.roles?.length ? profile.roles : ['Analyst'];
 
+  const ref = useRef(null);
+  const still = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -220]);
+  const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.88]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const contentBlur = useTransform(scrollYProgress, [0, 0.75], ['blur(0px)', 'blur(10px)']);
+  const sceneScale = useTransform(scrollYProgress, [0, 1], [1, 1.35]);
+  const sceneOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.15]);
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden">
-      <div className="grid-bg pointer-events-none absolute inset-0" />
-      <Suspense fallback={null}>
-        <HeroScene />
-      </Suspense>
+    <section ref={ref} id="top" className="relative flex min-h-[100svh] items-center overflow-hidden">
+      <motion.div style={still ? undefined : { y: gridY }} className="grid-bg pointer-events-none absolute inset-0" />
+      <motion.div style={still ? undefined : { scale: sceneScale, opacity: sceneOpacity }} className="absolute inset-0">
+        <Suspense fallback={null}>
+          <HeroScene />
+        </Suspense>
+      </motion.div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(5,6,10,0.85)_10%,transparent_60%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-24 pt-32 md:px-8">
+      <motion.div
+        style={still ? undefined : { y: contentY, scale: contentScale, opacity: contentOpacity, filter: contentBlur, transformOrigin: '0% 50%' }}
+        className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-24 pt-32 md:px-8"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={ready ? { opacity: 1, y: 0 } : {}}
@@ -140,7 +156,7 @@ export default function Hero({ ready }) {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <button
         type="button"

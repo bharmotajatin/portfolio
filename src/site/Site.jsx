@@ -13,10 +13,12 @@ import Projects from './Projects';
 import Education from './Education';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
+import Process from './Process';
+import { ScrollSection } from './scrollfx';
 import Footer from './Footer';
 import { DockNav, Loader, Marquee, ScrollProgress, TopBar } from './Chrome';
 
-const SECTIONS = { about: About, skills: Skills, experience: Experience, projects: Projects, education: Education, testimonials: Testimonials, contact: Contact };
+const SECTIONS = { about: About, skills: Skills, process: Process, experience: Experience, projects: Projects, education: Education, testimonials: Testimonials, contact: Contact };
 
 function Page() {
   const content = useContent();
@@ -50,7 +52,12 @@ function Page() {
           <Marquee />
           {visible.map((s, i) => {
             const Section = SECTIONS[s.id];
-            return <Section key={s.id} index={i + 1} />;
+            if (Section.pinned) return <Section key={s.id} index={i + 1} />;
+            return (
+              <ScrollSection key={s.id}>
+                <Section index={i + 1} />
+              </ScrollSection>
+            );
           })}
         </main>
         <div className="relative z-10">

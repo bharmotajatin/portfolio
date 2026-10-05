@@ -3,6 +3,7 @@ import { scrollToId } from '../lib/scroll';
 import TiltedCard from '../components/reactbits/TiltedCard';
 import ScrollReveal from '../components/reactbits/ScrollReveal';
 import { Reveal, SectionHeading } from './ui';
+import { Parallax } from './scrollfx';
 
 const CARD_W = 'min(380px, 82vw)';
 const CARD_H = 'min(500px, 108vw)';
@@ -37,27 +38,29 @@ export default function About({ index }) {
   return (
     <section id="about" className="section-pad">
       <div className="grid items-center gap-16 lg:grid-cols-[auto_1fr]">
-        <Reveal className="relative mx-auto">
-          <div className="pointer-events-none absolute -inset-8 animate-spin-slow rounded-full border border-dashed border-mint/20" />
-          <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-mint/30 via-cyan/10 to-violet/30 blur-3xl" />
-          <div className="cursor-target relative">
-            <TiltedCard
-              imageSrc={profile.avatar}
-              altText={profile.name}
-              captionText={profile.location}
-              containerHeight={CARD_H}
-              containerWidth={CARD_W}
-              imageHeight={CARD_H}
-              imageWidth={CARD_W}
-              rotateAmplitude={12}
-              scaleOnHover={1.05}
-              showMobileWarning={false}
-              showTooltip
-              displayOverlayContent
-              overlayContent={<PortraitOverlay profile={profile} />}
-            />
-          </div>
-        </Reveal>
+        <Parallax speed={60} className="relative mx-auto">
+          <Reveal className="relative">
+            <div className="pointer-events-none absolute -inset-8 animate-spin-slow rounded-full border border-dashed border-mint/20" />
+            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-mint/30 via-cyan/10 to-violet/30 blur-3xl" />
+            <div className="cursor-target relative">
+              <TiltedCard
+                imageSrc={profile.avatar}
+                altText={profile.name}
+                captionText={profile.location}
+                containerHeight={CARD_H}
+                containerWidth={CARD_W}
+                imageHeight={CARD_H}
+                imageWidth={CARD_W}
+                rotateAmplitude={12}
+                scaleOnHover={1.05}
+                showMobileWarning={false}
+                showTooltip
+                displayOverlayContent
+                overlayContent={<PortraitOverlay profile={profile} />}
+              />
+            </div>
+          </Reveal>
+        </Parallax>
 
         <div>
           <SectionHeading index={index} eyebrow="Who I am" title="Data meets" accent="systems." />
