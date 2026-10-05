@@ -154,6 +154,45 @@
     color: transparent;
   }
   .section-pad { @apply relative mx-auto w-full max-w-7xl px-5 py-24 md:px-8 md:py-32; }
+
+  .code-panel {
+    width: 300px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    background: rgba(11, 13, 20, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 60px -20px color-mix(in srgb, var(--accent) 55%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    font-family: var(--font-mono);
+    opacity: 0;
+    animation: panel-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    user-select: none;
+  }
+  .code-panel-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .code-panel-bar span { width: 8px; height: 8px; border-radius: 9999px; opacity: 0.85; }
+  .code-panel-bar em { margin-left: 8px; font-style: normal; font-size: 10px; letter-spacing: 0.04em; color: var(--accent); }
+  .code-panel pre { margin: 0; padding: 12px 14px 14px; font-size: 11.5px; line-height: 1.75; white-space: pre; }
+  .code-line { opacity: 0; transform: translateX(-6px); animation: line-in 0.4s ease-out forwards; }
+  .code-line b { display: inline-block; width: 18px; margin-right: 8px; font-weight: 400; color: #475569; text-align: right; }
+  .code-caret { display: inline-block; width: 7px; height: 13px; margin-left: 3px; vertical-align: -2px; background: var(--accent); animation: caret 1s steps(1) infinite; }
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(24px) rotateY(var(--tilt, 0deg)) scale(0.94); }
+  to { opacity: 1; transform: rotateY(var(--tilt, 0deg)); }
+}
+@keyframes line-in {
+  to { opacity: 1; transform: none; }
+}
+@keyframes caret {
+  50% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

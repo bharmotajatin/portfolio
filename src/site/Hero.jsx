@@ -10,6 +10,7 @@ import Magnet from '../components/reactbits/Magnet';
 import StarBorder from '../components/reactbits/StarBorder';
 import CountUp from '../components/reactbits/CountUp';
 import { TiltCard } from './ui';
+import CodePanels from './CodePanels';
 
 const HeroScene = lazy(() => import('./HeroScene'));
 
@@ -28,6 +29,7 @@ export default function Hero({ ready }) {
   const sceneScale = useTransform(scrollYProgress, [0, 1], [1, 1.35]);
   const sceneOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.15]);
   const gridY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const panelsY = useTransform(scrollYProgress, [0, 1], [0, -320]);
 
   return (
     <section ref={ref} id="top" className="relative flex min-h-[100svh] items-center overflow-hidden">
@@ -39,6 +41,11 @@ export default function Hero({ ready }) {
       </motion.div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(5,6,10,0.85)_10%,transparent_60%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
+      {ready && (
+        <motion.div style={still ? undefined : { y: panelsY, opacity: contentOpacity }} className="pointer-events-none absolute inset-0" aria-hidden>
+          <CodePanels />
+        </motion.div>
+      )}
 
       <motion.div
         style={still ? undefined : { y: contentY, scale: contentScale, opacity: contentOpacity, filter: contentBlur, transformOrigin: '0% 50%' }}
