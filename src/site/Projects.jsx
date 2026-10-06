@@ -134,7 +134,13 @@ const TECH = {
   'power bi': ['ri-dashboard-3-line', 'BI & reporting'],
   eda: ['ri-search-eye-line', 'Analysis'],
   vercel: ['ri-triangle-line', 'Hosting'],
-  serverless: ['ri-cloud-line', 'Backend']
+  serverless: ['ri-cloud-line', 'Backend'],
+  nestjs: ['ri-server-line', 'Backend'],
+  hono: ['ri-fire-line', 'Edge API'],
+  d1: ['ri-database-2-line', 'Database'],
+  cloudflare: ['ri-cloud-line', 'Edge hosting'],
+  drizzle: ['ri-database-line', 'ORM'],
+  turso: ['ri-database-2-line', 'Database']
 };
 
 const techMeta = name => TECH[name.toLowerCase()] || ['ri-code-box-line', 'Tooling'];

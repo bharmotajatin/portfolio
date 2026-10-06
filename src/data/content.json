@@ -468,22 +468,46 @@
     {
       "id": "flight-reservation",
       "title": "Flight Reservation Information System",
-      "category": "Data",
-      "year": "2024",
-      "description": "Reservation system on a normalised relational schema — 35% faster queries through indexing and query design.",
-      "details": "Designed the ER model and normalised schema, tuned indexes and rewrote hot queries for a 35% latency reduction.",
+      "category": "Web App",
+      "year": "2026",
+      "description": "Bird Group's flight-handling platform across 15 Indian stations — scheduled and non-scheduled flights, per-flight ops forms, billing and live dashboards.",
+      "details": "Led project management and the software concept for a five-person team. Covers advance schedules, ramp, terminal and load-control forms, equipment and manpower, cancellations, invoicing and MIS reporting, opening on a 3D station globe. Next.js 16 on Cloudflare Workers with a NestJS + MongoDB API on Railway, plus Hono + Cloudflare D1 modules for training, safety and equipment.",
       "tags": [
-        "SQL",
-        "Schema Design",
-        "Indexing"
+        "Next.js",
+        "NestJS",
+        "MongoDB",
+        "Cloudflare",
+        "Aviation"
       ],
       "liveUrl": "https://fris.bird-in.workers.dev/",
       "embed": true,
       "repoUrl": "",
-      "image": "",
+      "image": "/uploads/fris.jpg",
       "icon": "ri-plane-line",
       "color": "#60a5fa",
-      "featured": false
+      "featured": true
+    },
+    {
+      "id": "rms",
+      "title": "Resource Management System",
+      "category": "Web App",
+      "year": "2026",
+      "description": "Station-wise rostering and scheduling for Bird Group ground handling — replacing the legacy Lenok RMS with a fast edge app.",
+      "details": "Rebuilt the legacy AngularJS RMS as a modern app with station-scoped login and self-registration. Covers seasonal schedules and schedule comparison, daily flight handling, staff and equipment rosters, RMS reports and aircraft and flight-type masters. Next.js 15 served from Cloudflare Workers via OpenNext, with a Hono API on Cloudflare D1. Top committer on a team of five.",
+      "tags": [
+        "Next.js",
+        "Hono",
+        "Cloudflare",
+        "D1",
+        "Aviation"
+      ],
+      "liveUrl": "https://rms-app.bird-in.workers.dev/",
+      "embed": true,
+      "repoUrl": "",
+      "image": "/uploads/rms.jpg",
+      "icon": "ri-team-line",
+      "color": "#f97316",
+      "featured": true
     },
     {
       "id": "aqi",
