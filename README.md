@@ -14,6 +14,8 @@ npm run dev
 
 In dev, admin saves write straight to `src/data/content.json` and uploads go to `public/uploads/`.
 
+The flight dashboard at `/dashboard/` is served from its last build in `dist/dashboard`. Run `npm run build:dashboard` once (and after changing anything in `dashboard/`) to see it in dev.
+
 ## Content
 
 All site content lives in `src/data/content.json`. Edit it through the admin (recommended) or by hand. The admin can add, edit, duplicate, reorder and delete projects, experience, skills, education, certifications and testimonials, rename/reorder/hide sections, upload images and files, and import/export a JSON backup. A live preview shows unsaved edits.
