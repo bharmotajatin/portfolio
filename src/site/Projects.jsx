@@ -53,17 +53,6 @@ function Links({ project, compact }) {
           <i className="ri-external-link-line" /> Live
         </a>
       )}
-      {project.repoUrl && (
-        <a
-          href={project.repoUrl}
-          target="_blank"
-          rel="noreferrer"
-          onClick={e => e.stopPropagation()}
-          className={`btn-ghost cursor-target ${compact ? '!px-4 !py-2 text-xs' : 'text-sm'}`}
-        >
-          <i className="ri-github-line" /> Code
-        </a>
-      )}
     </div>
   );
 }
