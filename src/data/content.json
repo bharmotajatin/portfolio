@@ -495,6 +495,7 @@
         "Serverless"
       ],
       "liveUrl": "https://portfolio-sage-mu-53.vercel.app",
+      "embed": true,
       "repoUrl": "https://github.com/bharmotajatin/portfolio",
       "image": "",
       "icon": "ri-global-line",

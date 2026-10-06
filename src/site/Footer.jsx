@@ -48,7 +48,7 @@ export default function Footer() {
       <motion.div
         ref={nameRef}
         style={still ? undefined : { y: nameY, scale: nameScale, letterSpacing: nameSpacing }}
-        className="pointer-events-none mt-16 select-none text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.08)]"
+        className="pointer-events-none mt-16 select-none text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_color-mix(in_srgb,var(--color-white)_8%,transparent)]"
       >
         {profile.name.split(' ')[0].toUpperCase()}
       </motion.div>

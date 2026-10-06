@@ -1,38 +1,115 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Float, Line, MeshDistortMaterial, Sparkles, Stars } from '@react-three/drei';
+import { Float, Line, Sparkles, Stars, Trail } from '@react-three/drei';
 import * as THREE from 'three';
+import { useTheme } from '../lib/theme';
 
-function DataCore() {
-  const shell = useRef();
-  const inner = useRef();
-  useFrame((state, dt) => {
-    shell.current.rotation.y += dt * 0.15;
-    shell.current.rotation.x += dt * 0.05;
-    inner.current.rotation.y -= dt * 0.2;
+const useLight = () => useTheme() === 'light';
+
+const NUCLEONS = 19;
+const ORBITS = [
+  { spin: 0, r: 2.05, tilt: 1.22, color: '#22d3ee', speed: 1.1, electrons: [0] },
+  { spin: Math.PI / 5, r: 2.4, tilt: 1.3, color: '#34d399', speed: 0.8, electrons: [2.1, 2.1 + Math.PI] },
+  { spin: (Math.PI * 2) / 5, r: 2.05, tilt: 1.22, color: '#fbbf24', speed: 1.3, electrons: [4.2] },
+  { spin: (Math.PI * 3) / 5, r: 2.4, tilt: 1.3, color: '#a78bfa', speed: 0.95, electrons: [1, 1 + Math.PI] },
+  { spin: (Math.PI * 4) / 5, r: 2.05, tilt: 1.22, color: '#fb7185', speed: 1.2, electrons: [3.3] }
+];
+
+function Nucleus() {
+  const ref = useRef();
+  const light = useLight();
+  const glow = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+  const particles = useMemo(() => {
+    const golden = Math.PI * (3 - Math.sqrt(5));
+    return Array.from({ length: NUCLEONS }, (_, i) => {
+      const y = 1 - (i / (NUCLEONS - 1)) * 2;
+      const r = Math.sqrt(1 - y * y);
+      const a = i * golden;
+      const d = i === 0 ? 0 : 0.36;
+      return { pos: [Math.cos(a) * r * d, y * d, Math.sin(a) * r * d], proton: i % 2 === 0 };
+    });
+  }, []);
+  useFrame((_, dt) => {
+    ref.current.rotation.y += dt * 0.35;
+    ref.current.rotation.x += dt * 0.12;
   });
   return (
-    <Float speed={1.6} rotationIntensity={0.5} floatIntensity={1.2}>
-      <group>
-        <mesh ref={inner}>
-          <icosahedronGeometry args={[1.25, 24]} />
-          <MeshDistortMaterial
-            color="#2b6c8f"
-            emissive="#0e7490"
-            emissiveIntensity={0.55}
-            roughness={0.18}
-            metalness={0.25}
-            distort={0.38}
-            speed={1.8}
-            iridescence={1}
-            iridescenceIOR={1.6}
-            clearcoat={1}
-          />
-        </mesh>
-        <mesh ref={shell} scale={1.75}>
-          <icosahedronGeometry args={[1, 1]} />
-          <meshBasicMaterial color="#22d3ee" wireframe transparent opacity={0.22} />
-        </mesh>
+    <group>
+      <group ref={ref}>
+        {particles.map((p, i) => (
+          <mesh key={i} position={p.pos}>
+            <sphereGeometry args={[0.2, 32, 32]} />
+            <meshStandardMaterial
+              color={p.proton ? '#34d399' : '#a78bfa'}
+              emissive={p.proton ? '#10b981' : '#7c3aed'}
+              emissiveIntensity={0.6}
+              roughness={0.25}
+              metalness={0.4}
+            />
+          </mesh>
+        ))}
+      </group>
+      <mesh>
+        <sphereGeometry args={[0.85, 32, 32]} />
+        <meshBasicMaterial key={glow} color="#22d3ee" transparent opacity={light ? 0.1 : 0.07} depthWrite={false} blending={glow} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[1.25, 32, 32]} />
+        <meshBasicMaterial key={glow} color="#34d399" transparent opacity={light ? 0.06 : 0.035} depthWrite={false} blending={glow} />
+      </mesh>
+      <pointLight color="#34d399" intensity={6} distance={4} />
+    </group>
+  );
+}
+
+function Electron({ r, color, speed, offset }) {
+  const ref = useRef();
+  useFrame(({ clock }) => {
+    const t = clock.elapsedTime * speed + offset;
+    ref.current.position.set(Math.cos(t) * r, Math.sin(t) * r, 0);
+  });
+  return (
+    <Trail width={1.6} length={5} color={color} attenuation={w => w * w}>
+      <mesh ref={ref}>
+        <sphereGeometry args={[0.09, 20, 20]} />
+        <meshBasicMaterial color={color} toneMapped={false} />
+      </mesh>
+    </Trail>
+  );
+}
+
+function Orbit({ spin, r, tilt, color, speed, electrons }) {
+  const points = useMemo(
+    () => Array.from({ length: 129 }, (_, i) => {
+      const a = (i / 128) * Math.PI * 2;
+      return [Math.cos(a) * r, Math.sin(a) * r, 0];
+    }),
+    [r]
+  );
+  return (
+    <group rotation={[0, 0, spin]}>
+      <group rotation={[tilt, 0, 0]}>
+        <Line points={points} color={color} lineWidth={1.4} transparent opacity={0.6} />
+        {electrons.map(offset => (
+          <Electron key={offset} r={r} color={color} speed={speed} offset={offset} />
+        ))}
+      </group>
+    </group>
+  );
+}
+
+function DataCore() {
+  const ref = useRef();
+  useFrame((_, dt) => {
+    ref.current.rotation.y += dt * 0.08;
+  });
+  return (
+    <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.6}>
+      <group ref={ref} rotation={[0.25, 0, -0.15]}>
+        <Nucleus />
+        {ORBITS.map(o => (
+          <Orbit key={o.spin} {...o} />
+        ))}
       </group>
     </Float>
   );
@@ -40,6 +117,8 @@ function DataCore() {
 
 function OrbitRing({ radius, count, tilt, speed, color, size = 0.035 }) {
   const ref = useRef();
+  const light = useLight();
+  const blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -60,7 +139,7 @@ function OrbitRing({ radius, count, tilt, speed, color, size = 0.035 }) {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color={color} size={size} sizeAttenuation transparent opacity={0.9} depthWrite={false} blending={THREE.AdditiveBlending} />
+        <pointsMaterial key={blending} color={color} size={size} sizeAttenuation transparent opacity={0.9} depthWrite={false} blending={blending} />
       </points>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[radius, 0.004, 8, 160]} />
@@ -73,6 +152,7 @@ function OrbitRing({ radius, count, tilt, speed, color, size = 0.035 }) {
 const TREND = [0.25, 0.55, 0.4, 0.85, 0.7, 1.15, 0.95, 1.45, 1.3, 1.8];
 
 function TrendChart({ position }) {
+  const light = useLight();
   const tube = useRef();
   const area = useRef();
   const dots = useRef([]);
@@ -121,7 +201,7 @@ function TrendChart({ position }) {
         <group key={i} position={p}>
           <mesh ref={el => (dots.current[i] = el)}>
             <sphereGeometry args={[0.055, 16, 16]} />
-            <meshBasicMaterial color={i === points.length - 1 ? '#fbbf24' : '#a7f3d0'} toneMapped={false} />
+            <meshBasicMaterial color={i === points.length - 1 ? '#fbbf24' : light ? '#10b981' : '#a7f3d0'} toneMapped={false} />
           </mesh>
           <Line points={[[0, 0, 0], [0, -p.y, 0]]} color="#22d3ee" lineWidth={0.6} transparent opacity={0.25} dashed dashSize={0.05} gapSize={0.05} />
         </group>
@@ -129,7 +209,7 @@ function TrendChart({ position }) {
       <Line points={[[-w / 2 - 0.2, 0, 0], [w / 2 + 0.3, 0, 0]]} color="#475569" lineWidth={1} />
       <Line points={[[-w / 2 - 0.2, 0, 0], [-w / 2 - 0.2, 2.1, 0]]} color="#475569" lineWidth={1} />
       {[0.5, 1, 1.5, 2].map(y => (
-        <Line key={y} points={[[-w / 2 - 0.2, y, 0], [w / 2 + 0.3, y, 0]]} color="#1e293b" lineWidth={0.5} transparent opacity={0.6} />
+        <Line key={y} points={[[-w / 2 - 0.2, y, 0], [w / 2 + 0.3, y, 0]]} color={light ? '#cbd5e1' : '#1e293b'} lineWidth={0.5} transparent opacity={0.6} />
       ))}
     </group>
   );
@@ -178,8 +258,7 @@ function Composition({ compact }) {
     return (
       <group position={[0, 0.6, 0]} scale={0.8}>
         <DataCore />
-        <OrbitRing radius={2.4} count={180} tilt={[0.4, 0, 0.2]} speed={0.25} color="#34d399" />
-        <OrbitRing radius={2.9} count={140} tilt={[-0.5, 0, -0.3]} speed={-0.18} color="#a78bfa" />
+        <OrbitRing radius={3.4} count={140} tilt={[1.2, 0, 0.1]} speed={0.12} color="#a78bfa" size={0.03} />
         <TrendChart position={[0, -3.4, -1]} />
       </group>
     );
@@ -188,8 +267,6 @@ function Composition({ compact }) {
   return (
     <group position={[width * 0.22, 0.15, 0]} scale={scale}>
       <DataCore />
-      <OrbitRing radius={2.4} count={180} tilt={[0.4, 0, 0.2]} speed={0.25} color="#34d399" />
-      <OrbitRing radius={2.9} count={140} tilt={[-0.5, 0, -0.3]} speed={-0.18} color="#a78bfa" />
       <OrbitRing radius={3.4} count={120} tilt={[1.2, 0, 0.1]} speed={0.12} color="#22d3ee" size={0.03} />
       <TrendChart position={[-0.9, -3.2, -0.8]} />
     </group>
@@ -197,6 +274,7 @@ function Composition({ compact }) {
 }
 
 export default function HeroScene() {
+  const light = useLight();
   const wrap = useRef(null);
   const [visible, setVisible] = useState(true);
   const [compact, setCompact] = useState(() => window.innerWidth < 768);
@@ -222,7 +300,7 @@ export default function HeroScene() {
         eventSource={document.body}
         eventPrefix="client"
       >
-        <ambientLight intensity={0.35} />
+        <ambientLight intensity={light ? 0.9 : 0.35} />
         <pointLight position={[4, 3, 4]} intensity={40} color="#34d399" />
         <pointLight position={[-4, -2, 3]} intensity={40} color="#a78bfa" />
         <pointLight position={[0, 4, -3]} intensity={25} color="#22d3ee" />
@@ -230,9 +308,9 @@ export default function HeroScene() {
           <Composition compact={compact} />
           <FloatingShapes />
         </Rig>
-        <Sparkles count={compact ? 40 : 90} scale={[12, 7, 6]} size={2.2} speed={0.35} color="#22d3ee" opacity={0.7} />
-        <Stars radius={60} depth={40} count={compact ? 1200 : 2500} factor={3} saturation={0} fade speed={0.6} />
-        <fog attach="fog" args={['#05060a', 8, 22]} />
+        <Sparkles count={compact ? 40 : 90} scale={[12, 7, 6]} size={2.2} speed={0.35} color={light ? '#0891b2' : '#22d3ee'} opacity={0.7} />
+        {!light && <Stars radius={60} depth={40} count={compact ? 1200 : 2500} factor={3} saturation={0} fade speed={0.6} />}
+        <fog key={light ? 'l' : 'd'} attach="fog" args={[light ? '#f5f7fb' : '#05060a', 8, 22]} />
       </Canvas>
     </div>
   );

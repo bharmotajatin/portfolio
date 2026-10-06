@@ -12,12 +12,17 @@ export const Card = forwardRef(({ customClass, ...rest }, ref) => (
 ));
 Card.displayName = 'Card';
 
-const makeSlot = (i, distX, distY, total) => ({
-  x: i * distX,
-  y: -i * distY,
-  z: -i * distX * 1.5,
-  zIndex: total - i
-});
+const MAX_DEPTH = 3;
+
+const makeSlot = (i, distX, distY, total) => {
+  const d = Math.min(i, MAX_DEPTH);
+  return {
+    x: d * distX,
+    y: -d * distY,
+    z: -d * distX * 1.5,
+    zIndex: total - i
+  };
+};
 
 const placeNow = (el, slot, skew) =>
   gsap.set(el, {
@@ -42,9 +47,10 @@ const CardSwap = ({
   onCardClick,
   skewAmount = 6,
   easing = 'elastic',
+  speed = 1,
   children
 }) => {
-  const config =
+  const base =
     easing === 'elastic'
       ? {
           ease: 'elastic.out(0.6,0.9)',
@@ -62,6 +68,7 @@ const CardSwap = ({
           promoteOverlap: 0.45,
           returnDelay: 0.2
         };
+  const config = { ...base, durDrop: base.durDrop / speed, durMove: base.durMove / speed, durReturn: base.durReturn / speed };
 
   const childArr = useMemo(() => Children.toArray(children), [children]);
   const refs = useMemo(
@@ -108,7 +115,7 @@ const CardSwap = ({
             duration: config.durMove,
             ease: config.ease
           },
-          `promote+=${i * 0.15}`
+          `promote+=${(i * 0.15) / speed}`
         );
       });
 
@@ -161,7 +168,7 @@ const CardSwap = ({
     }
     return () => clearInterval(intervalRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
+  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing, speed]);
 
   const rendered = childArr.map((child, i) =>
     isValidElement(child)

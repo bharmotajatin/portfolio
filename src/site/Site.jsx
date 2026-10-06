@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence } from 'motion/react';
 import { ContentProvider, isPreview, useContent } from '../lib/content';
 import { useSmoothScroll } from '../lib/scroll';
+import { useTheme } from '../lib/theme';
 import ClickSpark from '../components/reactbits/ClickSpark';
 import TargetCursor from '../components/reactbits/TargetCursor';
 import Particles from '../components/reactbits/Particles';
@@ -25,6 +26,7 @@ function Page() {
   const preview = isPreview();
   const [ready, setReady] = useState(preview);
   const finish = useCallback(() => setReady(true), []);
+  const light = useTheme() === 'light';
   useSmoothScroll(!preview);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function Page() {
     <ClickSpark sparkColor="#34d399" sparkSize={12} sparkRadius={22} sparkCount={10} duration={450}>
       <div className="noise relative min-h-screen">
         <AnimatePresence>{!ready && <Loader onDone={finish} />}</AnimatePresence>
-        {!preview && <TargetCursor targetSelector=".cursor-target" spinDuration={2.4} cursorColor="#ffffff" cursorColorOnTarget="#34d399" />}
+        {!preview && <TargetCursor targetSelector=".cursor-target" spinDuration={2.4} cursorColor={light ? '#0b1020' : '#ffffff'} cursorColorOnTarget={light ? '#059669' : '#34d399'} />}
 
         <div className="pointer-events-none fixed inset-0 -z-0 opacity-60" aria-hidden>
           <Particles particleCount={140} particleSpread={12} speed={0.06} particleColors={['#34d399', '#22d3ee', '#a78bfa']} alphaParticles particleBaseSize={80} sizeRandomness={1} cameraDistance={22} disableRotation={false} />

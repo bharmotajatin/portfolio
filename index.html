@@ -7,6 +7,18 @@
   <meta name="description" content="Jatin Bharmota — Data Analyst & Business Systems Analyst with 4+ years across aviation and IT. Predictive modeling, MIS reporting, SQL optimization, Power BI and enterprise system architecture." />
   <meta name="author" content="Jatin Bharmota" />
   <meta name="theme-color" content="#05060a" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (t === 'light') {
+          document.documentElement.classList.add('light');
+          document.documentElement.style.colorScheme = 'light';
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f5f7fb');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="canonical" href="https://portfolio-sage-mu-53.vercel.app/" />
 
@@ -35,7 +47,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

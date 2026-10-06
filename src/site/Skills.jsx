@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { useContent } from '../lib/content';
+import { buildSkillUsage } from '../lib/skillUsage';
+import SkillTip from './SkillTip';
 import SpotlightCard from '../components/reactbits/SpotlightCard';
 import LogoLoop from '../components/reactbits/LogoLoop';
 import SkillSphere from './SkillSphere';
@@ -13,7 +16,9 @@ const hexToRgba = (hex, a) => {
 };
 
 export default function Skills({ index }) {
-  const { skills } = useContent();
+  const content = useContent();
+  const { skills } = content;
+  const usage = useMemo(() => buildSkillUsage(content), [content]);
   const total = skills.reduce((n, s) => n + s.items.length, 0);
   const logos = skills.flatMap(s =>
     s.items.slice(0, 4).map(name => ({
@@ -41,7 +46,7 @@ export default function Skills({ index }) {
           <Parallax speed={50}>
             <Reveal>
               <div className="mx-auto max-w-[560px]">
-                <SkillSphere skills={skills} />
+                <SkillSphere skills={skills} usage={usage} />
               </div>
             </Reveal>
           </Parallax>
@@ -80,13 +85,14 @@ export default function Skills({ index }) {
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {cat.items.map(item => (
-                        <span
-                          key={item}
-                          className="rounded-md border px-2 py-0.5 text-xs text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:text-white"
-                          style={{ borderColor: hexToRgba(cat.color, 0.25), background: hexToRgba(cat.color, 0.06) }}
-                        >
-                          {item}
-                        </span>
+                        <SkillTip key={item} name={item} info={usage.get(item)}>
+                          <span
+                            className="inline-block cursor-help rounded-md border px-2 py-0.5 text-xs text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:text-white"
+                            style={{ borderColor: hexToRgba(cat.color, 0.25), background: hexToRgba(cat.color, 0.06) }}
+                          >
+                            {item}
+                          </span>
+                        </SkillTip>
                       ))}
                     </div>
                   </SpotlightCard>
@@ -98,7 +104,7 @@ export default function Skills({ index }) {
       </div>
 
       <div className="border-y border-white/5 bg-ink-2/40 py-8">
-        <LogoLoop logos={logos} speed={60} direction="left" logoHeight={28} gap={56} pauseOnHover scaleOnHover fadeOut fadeOutColor="#05060a" ariaLabel="Technologies" />
+        <LogoLoop logos={logos} speed={60} direction="left" logoHeight={28} gap={56} pauseOnHover scaleOnHover fadeOut fadeOutColor="var(--color-ink)" ariaLabel="Technologies" />
       </div>
     </section>
   );

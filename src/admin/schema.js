@@ -109,6 +109,7 @@ export const GROUPS = [
           area('details', 'Full details (modal)', { rows: 5 }),
           { key: 'tags', label: 'Tech tags', type: 'tags' },
           { key: 'liveUrl', label: 'Live URL', type: 'url' },
+          { key: 'embed', label: 'Show live site inside the project popup (only works if the site allows embedding)', type: 'bool' },
           { key: 'repoUrl', label: 'Repository URL', type: 'url' },
           { key: 'image', label: 'Cover image (optional — a 3D icon card is used otherwise)', type: 'image' },
           { key: 'icon', label: 'Icon', type: 'icon' },
@@ -169,7 +170,15 @@ export const GROUPS = [
           { key: 'icon', label: 'Icon', type: 'icon' },
           { key: 'color', label: 'Colour', type: 'color' },
           { key: 'level', label: 'Proficiency', type: 'range', min: 0, max: 100 },
-          { key: 'items', label: 'Skills', type: 'tags' }
+          { key: 'items', label: 'Skills', type: 'tags' },
+          {
+            key: 'usage',
+            label: 'Hover messages (where you applied a skill)',
+            type: 'list',
+            itemLabel: u => u.skill || 'New message',
+            newItem: () => ({ skill: '', note: '' }),
+            fields: [text('skill', 'Skill (exact name from the list above)'), area('note', 'Message', { rows: 2 })]
+          }
         ]
       },
       {
@@ -209,9 +218,15 @@ export const GROUPS = [
         kind: 'list',
         path: 'testimonials',
         itemLabel: t => `“${(t.quote || '').slice(0, 48)}…”`,
-        itemMeta: t => [t.author, t.role].filter(Boolean).join(' · '),
+        itemMeta: t => [t.pending && '⏳ Awaiting approval', t.author, t.role].filter(Boolean).join(' · '),
         newItem: () => ({ quote: '', author: '', role: '', rating: 5 }),
-        fields: [area('quote', 'Quote', { rows: 3, required: true }), text('author', 'Author'), text('role', 'Role / company'), { key: 'rating', label: 'Rating', type: 'range', min: 1, max: 5 }]
+        fields: [
+          area('quote', 'Quote', { rows: 3, required: true }),
+          text('author', 'Author'),
+          text('role', 'Role / company'),
+          { key: 'rating', label: 'Rating', type: 'range', min: 1, max: 5 },
+          { key: 'pending', label: 'Pending approval (hidden from the site — untick to publish)', type: 'bool' }
+        ]
       }
     ]
   },

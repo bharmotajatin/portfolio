@@ -17,9 +17,9 @@ export default function Education({ index }) {
                 <GlareHover
                   width="100%"
                   height="auto"
-                  background="rgba(11,13,20,0.85)"
+                  background="color-mix(in srgb, var(--color-ink-2) 85%, transparent)"
                   borderRadius="24px"
-                  borderColor="rgba(255,255,255,0.1)"
+                  borderColor="var(--color-line)"
                   glareColor="#a7f3d0"
                   glareOpacity={0.25}
                   glareAngle={-35}

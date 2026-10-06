@@ -39,7 +39,7 @@ export default function Hero({ ready }) {
           <HeroScene />
         </Suspense>
       </motion.div>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(5,6,10,0.85)_10%,transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_left,color-mix(in_srgb,var(--color-ink)_85%,transparent)_10%,transparent_60%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
       {ready && (
         <motion.div style={still ? undefined : { y: panelsY, opacity: contentOpacity }} className="pointer-events-none absolute inset-0" aria-hidden>
@@ -58,16 +58,16 @@ export default function Hero({ ready }) {
           className="glass mb-8 inline-flex items-center gap-3 rounded-full py-2 pl-3 pr-5"
         >
           <span className={`relative h-2.5 w-2.5 rounded-full ${profile.available ? 'animate-pulse-ring bg-mint' : 'bg-amber'}`} />
-          <ShinyText text={profile.availability} speed={3} color="#94a3b8" shineColor="#ffffff" className="font-mono text-xs tracking-wide" />
+          <ShinyText text={profile.availability} speed={3} color="var(--color-slate-400)" shineColor="var(--color-white)" className="font-mono text-xs tracking-wide" />
         </motion.div>
 
         {ready && (
-          <h1 className="font-display font-extrabold leading-[0.9] tracking-tight text-white">
+          <h1 className="leading-[0.95] text-white">
             <SplitText
               text={first}
               tag="span"
               textAlign="left"
-              className="block text-[min(9.5rem,11vw)]"
+              className="!block font-grotesk text-[min(9rem,10.5vw)] font-semibold tracking-[-0.04em]"
               delay={45}
               duration={1}
               from={{ opacity: 0, y: 120, rotateX: -90 }}
@@ -78,7 +78,7 @@ export default function Hero({ ready }) {
               text={rest.join(' ')}
               tag="span"
               textAlign="left"
-              className="split-gradient block text-[min(9.5rem,11vw)]"
+              className="split-gradient -mt-2 !block pr-[0.12em] font-serif text-[min(10rem,11.5vw)] italic tracking-[-0.01em]"
               delay={45}
               duration={1}
               from={{ opacity: 0, y: 120, rotateX: -90 }}
@@ -133,8 +133,9 @@ export default function Hero({ ready }) {
               download
               color="#22d3ee"
               speed="5s"
-              backgroundColor="#0b0d14"
-              borderColor="rgba(255,255,255,0.12)"
+              backgroundColor="var(--color-ink-2)"
+              textColor="var(--color-white)"
+              borderColor="var(--color-line)"
               className="cursor-target"
             >
               <span className="inline-flex items-center gap-2 text-sm font-medium">

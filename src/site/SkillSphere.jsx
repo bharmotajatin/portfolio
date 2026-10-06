@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { UsageDetails } from './SkillTip';
 
-export default function SkillSphere({ skills }) {
+export default function SkillSphere({ skills, usage }) {
   const wrap = useRef(null);
   const nodes = useRef([]);
   const [hovered, setHovered] = useState(null);
@@ -103,7 +104,7 @@ export default function SkillSphere({ skills }) {
       <div className="pointer-events-none absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.18),transparent_65%)] blur-2xl" />
       <div className="pointer-events-none absolute inset-[8%] animate-spin-slow rounded-full border border-dashed border-white/10" />
       <div className="pointer-events-none absolute inset-[22%] rounded-full border border-white/5" style={{ animation: 'spin 26s linear infinite reverse' }} />
-      <div className="absolute left-1/2 top-1/2">
+      <div className="absolute left-1/2 top-1/2 isolate z-0">
         {words.map((w, i) => (
           <span
             key={`${w.cat}-${w.name}`}
@@ -123,10 +124,16 @@ export default function SkillSphere({ skills }) {
           </span>
         ))}
       </div>
-      {hovered !== null && (
-        <div className="glass pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 font-mono text-[11px] text-slate-300">
-          {words[hovered].cat}
+      {hovered !== null && usage?.get(words[hovered].name) ? (
+        <div className="pointer-events-none absolute bottom-0 left-1/2 z-20 w-[min(280px,90%)] -translate-x-1/2 rounded-2xl border border-white/15 bg-ink-2 p-3.5 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)]">
+          <UsageDetails name={words[hovered].name} info={usage.get(words[hovered].name)} />
         </div>
+      ) : (
+        hovered !== null && (
+          <div className="pointer-events-none absolute bottom-2 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/15 bg-ink-2 px-4 py-1.5 font-mono text-[11px] text-slate-300">
+            {words[hovered].cat}
+          </div>
+        )
       )}
     </div>
   );

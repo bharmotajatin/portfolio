@@ -4,6 +4,32 @@ import { useContent } from '../lib/content';
 import { scrollToId } from '../lib/scroll';
 import Dock from '../components/reactbits/Dock';
 import ScrollVelocity from '../components/reactbits/ScrollVelocity';
+import { toggleTheme, useTheme } from '../lib/theme';
+
+export function ThemeToggle({ className = '' }) {
+  const theme = useTheme();
+  const light = theme === 'light';
+  return (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={light ? 'Switch to dark theme' : 'Switch to light theme'}
+      title={light ? 'Dark theme' : 'Light theme'}
+      className={`glass cursor-target relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl text-lg text-white transition-colors hover:border-mint/50 ${className}`}
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.i
+          key={theme}
+          className={light ? 'ri-moon-clear-line' : 'ri-sun-line'}
+          initial={{ y: 18, rotate: -90, opacity: 0 }}
+          animate={{ y: 0, rotate: 0, opacity: 1 }}
+          exit={{ y: -18, rotate: 90, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        />
+      </AnimatePresence>
+    </button>
+  );
+}
 
 export function Loader({ onDone }) {
   const { profile } = useContent();
@@ -98,9 +124,7 @@ export function TopBar() {
             </span>
           </button>
           <div className="flex items-center gap-2">
-            <a href={profile.resume} download className="btn-ghost cursor-target hidden !px-4 !py-2 text-sm md:inline-flex">
-              <i className="ri-file-user-line" /> Resume
-            </a>
+            <ThemeToggle />
             <button type="button" onClick={() => go('contact')} className="btn-primary cursor-target hidden !px-5 !py-2 text-sm md:inline-flex">
               Hire me <i className="ri-arrow-right-up-line" />
             </button>

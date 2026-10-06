@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { PREVIEW_MESSAGE, PREVIEW_READY } from '../lib/preview';
+import { toggleTheme, useTheme } from '../lib/theme';
 import { ALL_EDITORS, GROUPS, newId } from './schema';
 import { Field, IconButton, StringList, inputCls } from './fields';
 
@@ -325,7 +326,7 @@ function Preview({ draft, device, onClose }) {
           <i className="ri-close-line" />
         </button>
       </div>
-      <div className="flex flex-1 items-start justify-center overflow-hidden bg-[radial-gradient(circle_at_center,#0b0d14,#05060a)] p-3">
+      <div className="flex flex-1 items-start justify-center overflow-hidden bg-[radial-gradient(circle_at_center,var(--color-ink-2),var(--color-ink))] p-3">
         <iframe ref={frame} title="Site preview" src="/?preview=1" className={`h-full rounded-xl border border-white/10 bg-ink transition-all duration-500 ${device === 'mobile' ? 'w-[390px]' : 'w-full'}`} />
       </div>
     </div>
@@ -412,6 +413,7 @@ export default function Admin() {
     if (auth?.authed && !saved) load();
   }, [auth?.authed, saved, load]);
 
+  const theme = useTheme();
   const dirty = useMemo(() => draft && saved && JSON.stringify(draft) !== JSON.stringify(saved), [draft, saved]);
 
   useEffect(() => {
@@ -522,6 +524,7 @@ export default function Admin() {
           <button type="button" disabled={!dirty || saving || auth.storage === 'none'} onClick={save} className="btn-primary !px-4 !py-2 text-xs disabled:opacity-40" title="Ctrl + S">
             {saving ? <i className="ri-loader-4-line animate-spin" /> : <i className="ri-save-3-line" />} {saving ? 'Saving…' : 'Save & publish'}
           </button>
+          <IconButton icon={theme === 'light' ? 'ri-moon-clear-line' : 'ri-sun-line'} label={theme === 'light' ? 'Dark theme' : 'Light theme'} onClick={toggleTheme} />
           <IconButton icon="ri-logout-box-r-line" label="Sign out" onClick={logout} />
         </div>
       </header>
