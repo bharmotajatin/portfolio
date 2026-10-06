@@ -477,7 +477,8 @@
         "Schema Design",
         "Indexing"
       ],
-      "liveUrl": "",
+      "liveUrl": "https://fris.bird-in.workers.dev/",
+      "embed": true,
       "repoUrl": "",
       "image": "",
       "icon": "ri-plane-line",
