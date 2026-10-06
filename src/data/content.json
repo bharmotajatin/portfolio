@@ -403,6 +403,28 @@
       "featured": true
     },
     {
+      "id": "fitness-gym",
+      "title": "Fitness Gym — Website & Member Management",
+      "category": "Web App",
+      "year": "2026",
+      "description": "Marketing site and admin system for a Pune gym: members, plans, fees, invoices and WhatsApp payment notices in one place.",
+      "details": "Next.js App Router + TypeScript with Drizzle ORM on Turso (libSQL), NextAuth role-based admin and Vercel Blob uploads. Handles membership cycles, fee collection and a collections MIS, PDF invoices with email delivery, Excel import/export, and a daily cron that flags overdue fees. The public site's content is fully editable from the admin. CI runs lint, type-check and build on every push.",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Drizzle",
+        "Turso",
+        "NextAuth"
+      ],
+      "liveUrl": "https://fitnessgym-gamma.vercel.app",
+      "embed": true,
+      "repoUrl": "",
+      "image": "/uploads/fitness-gym.jpg",
+      "icon": "ri-run-line",
+      "color": "#fb923c",
+      "featured": true
+    },
+    {
       "id": "bfs-safety",
       "title": "BFS Safety Incident Tracker",
       "category": "Web App",
