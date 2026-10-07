@@ -107,10 +107,12 @@ export const GROUPS = [
           text('year', 'Year'),
           area('description', 'Card description', { rows: 3 }),
           area('details', 'Full details (modal)', { rows: 5 }),
+          { key: 'howItWorks', label: 'How it works (numbered steps in the popup)', type: 'stringList' },
           { key: 'tags', label: 'Tech tags', type: 'tags' },
           { key: 'liveUrl', label: 'Live URL', type: 'url' },
           { key: 'embed', label: 'Show live site inside the project popup (only works if the site allows embedding)', type: 'bool' },
           { key: 'repoUrl', label: 'Repository URL', type: 'url' },
+          text('demo', 'Interactive demo shown in the popup instead of the live site (leave empty for none)', { suggestions: ['fake-news'] }),
           { key: 'image', label: 'Cover image (optional — a 3D icon card is used otherwise)', type: 'image' },
           { key: 'icon', label: 'Icon', type: 'icon' },
           { key: 'color', label: 'Accent colour', type: 'color' },
@@ -189,8 +191,21 @@ export const GROUPS = [
         path: 'education',
         itemLabel: e => e.degree,
         itemMeta: e => `${e.school} · ${e.start} — ${e.end}`,
-        newItem: () => ({ degree: 'New degree', school: '', start: '', end: '', score: '', description: '' }),
-        fields: [text('degree', 'Degree', { required: true }), text('school', 'Institution'), text('start', 'Start'), text('end', 'End'), text('score', 'Score / CGPA'), area('description', 'Description', { rows: 3 })]
+        description: 'Each card opens a popup with the full details, highlights and coursework.',
+        newItem: () => ({ degree: 'New degree', school: '', start: '', end: '', score: '', description: '', location: '', url: '', details: '', highlights: [], coursework: [] }),
+        fields: [
+          text('degree', 'Degree', { required: true }),
+          text('school', 'Institution'),
+          text('location', 'Location'),
+          text('start', 'Start'),
+          text('end', 'End'),
+          text('score', 'Score / CGPA'),
+          area('description', 'Card description', { rows: 3 }),
+          area('details', 'Full description (popup)', { rows: 5 }),
+          { key: 'highlights', label: 'Highlights (popup)', type: 'stringList' },
+          { key: 'coursework', label: 'Key coursework', type: 'tags' },
+          { key: 'url', label: 'Institution website', type: 'url' }
+        ]
       },
       {
         id: 'certifications',
@@ -200,8 +215,19 @@ export const GROUPS = [
         path: 'certifications',
         itemLabel: c => c.name,
         itemMeta: c => [c.issuer, c.year].filter(Boolean).join(' · '),
-        newItem: () => ({ name: 'New certification', issuer: '', year: String(new Date().getFullYear()), url: '' }),
-        fields: [text('name', 'Name', { required: true }), text('issuer', 'Issuer'), text('year', 'Year'), { key: 'url', label: 'Credential URL', type: 'url' }]
+        description: 'Each card opens a popup. Upload the certificate image (e.g. a screenshot from LinkedIn) — without one, a generated certificate is shown in the accent colour.',
+        newItem: () => ({ name: 'New certification', issuer: '', year: String(new Date().getFullYear()), url: '', image: '', credentialId: '', color: '#34d399', description: '', skills: [] }),
+        fields: [
+          text('name', 'Name', { required: true }),
+          text('issuer', 'Issuer'),
+          text('year', 'Year'),
+          { key: 'image', label: 'Certificate image', type: 'image' },
+          area('description', 'Description (popup)', { rows: 4 }),
+          { key: 'skills', label: 'Skills covered', type: 'tags' },
+          text('credentialId', 'Credential ID'),
+          { key: 'url', label: 'Credential / verify URL', type: 'url' },
+          { key: 'color', label: 'Accent colour', type: 'color' }
+        ]
       },
       {
         id: 'competencies',
