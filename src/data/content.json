@@ -322,7 +322,8 @@
         "SDLC",
         "Aviation",
         "Analytics"
-      ]
+      ],
+      "logo": "/uploads/logos/bird-flight-services.png"
     },
     {
       "id": "bird-mkt",
@@ -341,7 +342,8 @@
         "Revenue Analytics",
         "Negotiation",
         "Automation"
-      ]
+      ],
+      "logo": "/uploads/logos/bird-flight-services.png"
     },
     {
       "id": "expedia",
@@ -359,7 +361,8 @@
         "AWS",
         "Cloud Ops",
         "Process Improvement"
-      ]
+      ],
+      "logo": "/uploads/logos/igt-solutions.png"
     },
     {
       "id": "educonclave",
@@ -377,7 +380,8 @@
         "IT Infrastructure",
         "EdTech",
         "Reporting"
-      ]
+      ],
+      "logo": "/uploads/logos/educonclave.png"
     }
   ],
   "projects": [
