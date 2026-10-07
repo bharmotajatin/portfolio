@@ -60,10 +60,17 @@ export default function Experience({ index }) {
                     <div className="mb-1 font-mono text-xs text-mint md:hidden">
                       {job.start} — {job.end}
                     </div>
-                    <h3 className="font-display text-2xl font-bold text-white">{job.role}</h3>
-                    <div className="mt-1 flex flex-wrap items-center gap-x-2 text-sm text-cyan">
-                      <i className="ri-building-2-line" /> {job.company}
+                    <div className="mb-4 flex items-center">
+                      {job.logo ? (
+                        <img src={job.logo} alt="" className="h-10 w-auto max-w-[200px] object-contain object-left" />
+                      ) : (
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg text-cyan">
+                          <i className="ri-building-2-line" />
+                        </span>
+                      )}
                     </div>
+                    <h3 className="font-display text-2xl font-bold text-white">{job.role}</h3>
+                    <div className="mt-1 text-sm text-cyan">{job.company}</div>
                     <ul className="mt-5 space-y-3">
                       {job.highlights?.map((h, j) => (
                         <motion.li

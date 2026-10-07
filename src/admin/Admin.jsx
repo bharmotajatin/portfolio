@@ -23,6 +23,7 @@ async function api(path, init) {
 
 function Login({ onDone, configured }) {
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
 
@@ -62,7 +63,26 @@ function Login({ onDone, configured }) {
             ADMIN_PASSWORD is not configured on the server. Add it in Vercel → Settings → Environment Variables.
           </p>
         )}
-        <input type="password" autoFocus value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" className={`${inputCls} mt-6 !py-3`} autoComplete="current-password" />
+        <div className="relative mt-6">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            autoFocus
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+            className={`${inputCls} !py-3 !pr-11`}
+            autoComplete="current-password"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(v => !v)}
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+            aria-pressed={showPassword}
+            className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-lg text-slate-400 transition-colors hover:text-white"
+          >
+            <i className={showPassword ? 'ri-eye-off-line' : 'ri-eye-line'} />
+          </button>
+        </div>
         {error && <p className="mt-2 text-sm text-rose">{error}</p>}
         <button type="submit" disabled={busy || !password} className="btn-primary mt-4 w-full disabled:opacity-50">
           {busy ? <i className="ri-loader-4-line animate-spin" /> : <i className="ri-login-circle-line" />} Sign in
