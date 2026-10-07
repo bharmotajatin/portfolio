@@ -510,6 +510,38 @@
       "featured": true
     },
     {
+      "id": "fake-news",
+      "title": "Fake News Detection System",
+      "category": "ML",
+      "year": "2026",
+      "description": "NLP classifier that flags fake news with 95.3% accuracy. Paste any article and watch the model explain its verdict, live in the browser.",
+      "details": "Trained in Python with scikit-learn on 6,335 labelled political news articles (balanced real and fake). Text is vectorised with TF-IDF over unigrams and bigrams and scored by a Logistic Regression classifier: 95.3% accuracy and 0.954 F1 on a held-out test set of 1,266 articles. Logistic Regression was picked over a Passive-Aggressive baseline (96.0%) because it gives real probabilities and per-word explanations at almost the same accuracy. The model is pruned to its 6,000 most informative n-grams and exported as a 167 KB JSON file, so inference runs entirely in the browser, with no server, and matches scikit-learn to five decimal places.",
+      "howItWorks": [
+        "Clean: strip URLs, HTML and extra whitespace, then lowercase the headline and body.",
+        "Tokenise: split into words, drop 318 English stop-words and build unigrams plus bigrams such as “mainstream media”.",
+        "Vectorise: weight every n-gram with sublinear TF-IDF, so terms that are frequent in this article but rare across the corpus count most, then L2-normalise the vector.",
+        "Classify: Logistic Regression adds up each n-gram’s TF-IDF weight × learned coefficient and passes the total through a sigmoid to get P(fake).",
+        "Explain: the per-word contributions are ranked and highlighted in the text, showing exactly what pushed the verdict toward fake or real."
+      ],
+      "tags": [
+        "Python",
+        "scikit-learn",
+        "TF-IDF",
+        "Logistic Regression",
+        "NLP",
+        "Pandas",
+        "React",
+        "In-browser inference"
+      ],
+      "liveUrl": "",
+      "repoUrl": "",
+      "image": "/uploads/fake-news.jpg",
+      "icon": "ri-newspaper-line",
+      "color": "#e879f9",
+      "featured": true,
+      "demo": "fake-news"
+    },
+    {
       "id": "aqi",
       "title": "Air Quality Index Analytics",
       "category": "Dashboard",
@@ -558,46 +590,201 @@
       "start": "Jul 2024",
       "end": "Jul 2026",
       "score": "CGPA 8.2 / 10",
-      "description": "Master of Computer Applications specialising in Artificial Intelligence & Machine Learning."
+      "description": "Master of Computer Applications specialising in Artificial Intelligence & Machine Learning.",
+      "location": "Faridabad, Haryana",
+      "url": "https://manavrachna.edu.in",
+      "details": "Master of Computer Applications in Information Technology, specialised in Artificial Intelligence. The programme is built around mastering the techniques of machine learning, artificial intelligence and deep learning, and on keeping pace with the emerging trends that are creating demand for these roles across every industry. I completed it alongside my full-time analyst role in aviation, so the models and methods went straight into the forecasting and reporting work I do every day.",
+      "highlights": [
+        "Specialised in Artificial Intelligence: machine learning, AI and deep learning",
+        "Completed while working full-time as a Business & Systems Analyst at Bird Group",
+        "Applied the coursework directly to real aviation data: forecasting, classification and reporting",
+        "Graduated with a CGPA of 8.2 / 10"
+      ],
+      "coursework": [
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Data Warehousing",
+        "Big Data Analytics",
+        "Cloud Computing",
+        "Python for Data Science"
+      ]
     },
     {
       "id": "bca",
       "degree": "BCA",
-      "school": "Integrated Institute of Technology, Dwarka",
+      "school": "Integrated Institute of Technology, Dwarka (GGSIPU)",
       "start": "Aug 2020",
       "end": "Jun 2023",
       "score": "CGPA 8.5 / 10",
-      "description": "Bachelor of Computer Applications — SQL Server, MySQL, Python, Java, C++, JavaScript, PHP, MATLAB."
+      "description": "Bachelor of Computer Applications — SQL Server, MySQL, Python, Java, C++, JavaScript, PHP, MATLAB.",
+      "location": "Dwarka, New Delhi",
+      "url": "https://www.ipu.ac.in",
+      "details": "Bachelor of Computer Applications from Guru Gobind Singh Indraprastha University, where I built a solid grounding in programming, software development and computer systems, working hands-on with SQL Server, MySQL, Python, Java, C++, JavaScript, PHP and MATLAB and using them to work through genuinely difficult problems. Outside the classroom I captained the university football team, and in parallel I worked as an IT consultant and faculty member at Edu Conclave.",
+      "highlights": [
+        "Captain of the GGSIPU football team: ran training sessions, set match strategy and kept the squad united on and off the pitch",
+        "Strong grounding in relational databases and SQL that underpins my analytics work",
+        "Worked in parallel as IT Consultant & Faculty at Edu Conclave",
+        "Graduated with a CGPA of 8.5 / 10"
+      ],
+      "coursework": [
+        "SQL Server",
+        "MySQL",
+        "Python",
+        "Java",
+        "C++",
+        "JavaScript",
+        "PHP",
+        "MATLAB",
+        "Data Structures",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering"
+      ]
     }
   ],
   "certifications": [
     {
-      "id": "iimc",
-      "name": "Data Analysis",
-      "issuer": "IIM Calcutta",
-      "year": "2024",
-      "url": ""
+      "id": "cn-data-analytics",
+      "name": "Data Analytics | Live",
+      "issuer": "Coding Ninjas",
+      "year": "Mar 2026",
+      "url": "https://certificate.codingninjas.com/view/0d750bc4d3578901",
+      "image": "/uploads/certs/coding-ninjas-data-analysis.webp",
+      "credentialId": "0d750bc4d3578901",
+      "color": "#fb923c",
+      "description": "Certification in data analysis with machine learning, with hands-on work in data preprocessing, exploratory data analysis (EDA) and data visualisation. Used Python and SQL alongside machine-learning techniques — regression, classification and clustering — on real-world datasets to extract insights, build predictive models and support data-driven decision-making.",
+      "skills": [
+        "Data Analysis",
+        "Python",
+        "SQL",
+        "Exploratory Data Analysis",
+        "Data Visualization",
+        "Regression",
+        "Classification",
+        "Clustering",
+        "Machine Learning"
+      ]
     },
     {
-      "id": "cn-excel",
-      "name": "Advanced Excel & Data Analysis",
-      "issuer": "Coding Ninjas",
-      "year": "2024",
-      "url": ""
+      "id": "iimc-excel",
+      "name": "Excel 2016: Core Data Analysis, Manipulation & Presentation",
+      "issuer": "Coding Ninjas × Analytics Club, IIM Calcutta",
+      "year": "Nov 2024",
+      "url": "",
+      "image": "/uploads/certs/iim-calcutta-data-analysis.webp",
+      "credentialId": "",
+      "color": "#34d399",
+      "description": "Excel workshop organised by the Coding Ninjas 10X Developer Club in association with the Analytics Club of IIM Calcutta. It covered key data-analysis concepts, using Excel as a serious analysis tool — cleaning, manipulating and presenting data — and the practical application of data to business decision-making.",
+      "skills": [
+        "Microsoft Excel",
+        "Advanced Excel",
+        "Data Analysis",
+        "Data Entry",
+        "Data Validation",
+        "Data Visualization",
+        "Data Structures",
+        "Data Warehousing",
+        "Database Management System (DBMS)",
+        "Databases",
+        "Microsoft Power BI",
+        "Tableau",
+        "Analytical Skills",
+        "Analytics",
+        "Business Analysis",
+        "Financial Analysis",
+        "Python (Programming Language)",
+        "Machine Learning"
+      ]
+    },
+    {
+      "id": "google-llm",
+      "name": "Introduction to Large Language Models",
+      "issuer": "Google Cloud",
+      "year": "Jul 2024",
+      "url": "https://www.cloudskillsboost.google/public_profiles/ab9164a7-1c90-43c6-b99b-2649a4645474/badges/10002268",
+      "image": "/uploads/certs/google-llm.webp",
+      "credentialId": "10002268",
+      "color": "#60a5fa",
+      "description": "Google Cloud Skills Boost course on what large language models are, the use cases they fit, and how prompt design and prompt tuning improve LLM output — plus the Google tools available for building your own generative-AI applications.",
+      "skills": [
+        "Large Language Models",
+        "Prompt Engineering",
+        "Prompt Tuning",
+        "Generative AI",
+        "Google Cloud"
+      ]
+    },
+    {
+      "id": "google-genai",
+      "name": "Introduction to Generative AI",
+      "issuer": "Google Cloud",
+      "year": "Jul 2024",
+      "url": "https://www.cloudskillsboost.google/public_profiles/ab9164a7-1c90-43c6-b99b-2649a4645474/badges/10001828",
+      "image": "/uploads/certs/google-genai.webp",
+      "credentialId": "10001828",
+      "color": "#a78bfa",
+      "description": "Google Cloud Skills Boost course explaining what generative AI is, how it is used, and how it differs from traditional machine-learning methods, along with the Google tools for developing generative-AI apps.",
+      "skills": [
+        "Generative AI",
+        "Machine Learning",
+        "Foundation Models",
+        "Google Cloud"
+      ]
+    },
+    {
+      "id": "aws-compute",
+      "name": "AWS Compute Services Overview",
+      "issuer": "AWS Training and Certification",
+      "year": "Jul 2024",
+      "url": "",
+      "image": "/uploads/certs/aws-compute-services.webp",
+      "credentialId": "",
+      "color": "#fbbf24",
+      "description": "AWS offers a broad range of compute options, and the right fit depends on the workload and what the business is trying to achieve. This course covers the three AWS compute options — virtual machines, containers and serverless — how they differ, and how to choose the right one.",
+      "skills": [
+        "Amazon Web Services (AWS)",
+        "Amazon EC2",
+        "Containers",
+        "AWS Lambda",
+        "Serverless"
+      ]
     },
     {
       "id": "aws-bedrock",
-      "name": "AWS Compute Services & Amazon Bedrock",
-      "issuer": "AWS",
-      "year": "2024",
-      "url": ""
+      "name": "Amazon Bedrock Getting Started",
+      "issuer": "AWS Training and Certification",
+      "year": "Jul 2024",
+      "url": "",
+      "image": "/uploads/certs/aws-bedrock.webp",
+      "credentialId": "",
+      "color": "#2dd4bf",
+      "description": "Amazon Bedrock is a fully managed service offering leading foundation models for building generative-AI applications quickly and at scale, with an emphasis on privacy and security. The course covers its benefits, features, use cases, technical concepts and costs, and walks through building a chatbot by integrating Bedrock with other AWS services.",
+      "skills": [
+        "Amazon Web Services (AWS)",
+        "Amazon Bedrock",
+        "Generative AI",
+        "Foundation Models",
+        "Chatbots"
+      ]
     },
     {
       "id": "crypto",
       "name": "Cryptocurrency Trading",
       "issuer": "Online",
       "year": "2024",
-      "url": ""
+      "url": "",
+      "image": "",
+      "credentialId": "",
+      "color": "#f472b6",
+      "description": "Course on how digital-asset markets work, reading price action with technical analysis, and the position-sizing and risk-management rules behind disciplined trading.",
+      "skills": [
+        "Technical Analysis",
+        "Market Structure",
+        "Risk Management",
+        "Blockchain Basics"
+      ]
     }
   ],
   "competencies": [

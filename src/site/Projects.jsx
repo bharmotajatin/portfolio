@@ -1,9 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, LayoutGroup, motion } from 'motion/react';
 import { useContent } from '../lib/content';
 import { lockScroll } from '../lib/scroll';
 import { SectionHeading, TiltCard, external } from './ui';
+
+const DEMOS = {
+  'fake-news': lazy(() => import('./FakeNewsDemo'))
+};
 
 function ProjectVisual({ project, className = '' }) {
   const [broken, setBroken] = useState(false);
@@ -52,6 +56,11 @@ function Links({ project, compact }) {
         >
           <i className="ri-external-link-line" /> Live
         </a>
+      )}
+      {compact && DEMOS[project.demo] && (
+        <span className="btn-primary cursor-target !px-4 !py-2 text-xs">
+          <i className="ri-play-circle-line" /> Try demo
+        </span>
       )}
     </div>
   );
@@ -140,7 +149,13 @@ const TECH = {
   d1: ['ri-database-2-line', 'Database'],
   cloudflare: ['ri-cloud-line', 'Edge hosting'],
   drizzle: ['ri-database-line', 'ORM'],
-  turso: ['ri-database-2-line', 'Database']
+  turso: ['ri-database-2-line', 'Database'],
+  'scikit-learn': ['ri-brain-line', 'Machine learning'],
+  'tf-idf': ['ri-grid-line', 'Feature extraction'],
+  'logistic regression': ['ri-git-commit-line', 'Classifier'],
+  nlp: ['ri-chat-1-line', 'Text processing'],
+  pandas: ['ri-table-line', 'Data wrangling'],
+  'in-browser inference': ['ri-cpu-line', 'Runtime']
 };
 
 const techMeta = name => TECH[name.toLowerCase()] || ['ri-code-box-line', 'Tooling'];
@@ -258,6 +273,8 @@ function LivePreview({ project }) {
 }
 
 function ProjectModal({ project, onClose }) {
+  const Demo = DEMOS[project.demo];
+
   useEffect(() => {
     const onKey = e => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -277,7 +294,7 @@ function ProjectModal({ project, onClose }) {
         exit={{ y: 60, rotateX: 18, opacity: 0 }}
         transition={{ type: 'spring', stiffness: 180, damping: 22 }}
         style={{ transformPerspective: 1400 }}
-        className="relative grid max-h-[92vh] w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-ink-2 shadow-2xl md:h-[min(720px,88vh)] md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]"
+        className="relative grid h-[92vh] w-full max-w-6xl grid-rows-[auto_minmax(0,1fr)] overflow-hidden rounded-3xl border border-white/10 bg-ink-2 shadow-2xl md:h-[min(720px,88vh)] md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:grid-rows-1"
         role="dialog"
         aria-modal="true"
         aria-label={project.title}
@@ -296,6 +313,24 @@ function ProjectModal({ project, onClose }) {
           <h3 className="font-display text-2xl font-bold leading-tight text-white md:text-3xl">{project.title}</h3>
           <p className="mt-4 leading-relaxed text-slate-300">{project.description}</p>
           {project.details && <p className="mt-3 text-sm leading-relaxed text-slate-400">{project.details}</p>}
+
+          {project.howItWorks?.length > 0 && (
+            <div className="mt-7">
+              <div className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-slate-500">
+                <i className="ri-flow-chart" /> How it works
+              </div>
+              <ol className="relative space-y-3 border-l border-white/10 pl-5">
+                {project.howItWorks.map((s, i) => (
+                  <motion.li key={s} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15 + i * 0.06 }} className="relative text-sm leading-relaxed text-slate-300">
+                    <span className="absolute -left-[31px] top-0 flex h-5 w-5 items-center justify-center rounded-full font-mono text-[10px] font-bold text-ink" style={{ background: project.color || '#22d3ee' }}>
+                      {i + 1}
+                    </span>
+                    {s}
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
+          )}
 
           {project.tags?.length > 0 && (
             <div className="mt-7">
@@ -332,8 +367,16 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
-        <motion.div layoutId={`visual-${project.id}`} className="order-1 h-64 border-b border-white/10 sm:h-80 md:order-2 md:h-auto md:border-b-0 md:border-l">
-          <LivePreview project={project} />
+        <motion.div layoutId={`visual-${project.id}`} className={`order-1 border-b border-white/10 md:order-2 md:h-auto md:border-b-0 md:border-l ${Demo ? 'relative h-[62vh]' : 'h-64 sm:h-80'}`}>
+          {Demo ? (
+            <div className="absolute inset-0">
+              <Suspense fallback={<ProjectVisual project={project} className="h-full" />}>
+                <Demo project={project} />
+              </Suspense>
+            </div>
+          ) : (
+            <LivePreview project={project} />
+          )}
         </motion.div>
 
         <button type="button" onClick={onClose} aria-label="Close" className="glass cursor-target absolute right-4 top-14 z-10 flex h-10 w-10 items-center justify-center rounded-full text-xl text-white transition-transform hover:rotate-90 md:top-4 md:right-auto md:left-[calc(45%-3.5rem)]">
