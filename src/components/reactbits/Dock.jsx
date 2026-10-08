@@ -68,7 +68,7 @@ function DockLabel({ children, className = '', ...rest }) {
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#120F17] px-2 py-0.5 text-xs text-white`}
+          className={`${className} dock-label absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md px-2 py-0.5 text-xs font-semibold`}
           role="tooltip"
           style={{ x: '-50%' }}
         >
